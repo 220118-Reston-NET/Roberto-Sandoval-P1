@@ -1,6 +1,6 @@
 namespace StoreModel
 {
-    public class Store
+    public class StoreFront
     {
         public string Name { get; set; }
         public string Address { get; set; }

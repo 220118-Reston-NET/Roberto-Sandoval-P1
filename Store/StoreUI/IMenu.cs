@@ -1,9 +1,8 @@
-namespace StoreUI
-{
-    public interface IMenu
-    {
-        void ShowMenu();
+namespace StoreUI;
 
-        string UserPick();
-    }
+public interface IMenu
+{
+    void ShowMenu();
+
+    string UserPick();
 }
