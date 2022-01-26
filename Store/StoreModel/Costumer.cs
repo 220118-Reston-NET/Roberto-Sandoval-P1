@@ -1,34 +1,37 @@
-namespace StoreModel
+namespace StoreModel;
+public class Costumer
 {
-    public class Costumer
+    private List<Costumer> _list = new List<Costumer>();
+    public string Name { get; set; }
+    public string Phone { get; set; }
+    public string Address { get; set; }
+    public string Email { get; set; }
+
+    public List<Orders> _orders;
+    
+
+    public Costumer()
     {
-        private List<Costumer> _list = new List<Costumer>();
-        public string Name { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-
-        public Costumer()
-        {
-            Name = ".Name";
-            Phone = ".Phone";
-            Address = ".Address";
-            Email = ".Email";
-        }
-
-        public void findCostumer(String p_name, string p_phone)
-        {
-            foreach (var curr in _list)
-            {
-                if (curr.Name == p_name && curr.Phone == p_phone)
-                {
-                    Console.WriteLine("Costumer does excist in database");
-                    return;
-                }
-            }
-            
-            Console.WriteLine("costumer does not excist in database");
-
-        }
+        Name = ".Name";
+        Phone = ".Phone";
+        Address = ".Address";
+        Email = ".Email";
+        _orders = new List<Orders>();
     }
+
+    public void printOrders()
+    {
+        _orders.ToString();
+    }
+
+    public void addToOrder(Orders p_product)
+    {
+        _orders.Add(p_product);
+    }
+
+    public override string ToString()
+    {
+        return $"Name: {Name}\nPhone Number: {Phone}\nAddress: {Address}\nEmail: {Email}";
+    }
+    
 }

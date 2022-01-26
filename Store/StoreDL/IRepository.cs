@@ -1,9 +1,9 @@
 ﻿using StoreModel;
 
-namespace StoreDL
+namespace StoreDL;
+public interface IRepository
 {
-    public interface IRepository
-    {
-        Costumer AddCostumer(Costumer p_costumer);
-    }
+    Costumer AddCostumer(Costumer p_costumer);
+    List<Costumer> ListOfCostumers();
+
 }

@@ -5,6 +5,10 @@ using StoreDL;
 bool repeat = true;
 IMenu menu = new MainMenu();
 
+Console.WriteLine("Database has been initialized succesfully");
+Console.WriteLine("Press ENTER to continue");
+
+
 while(repeat)
 {
     Console.Clear();
@@ -23,7 +27,7 @@ while(repeat)
             menu = new AddCostumerMenu(new CostumerBL(new Repository()));
             break;
         case "SearchCostumer":
-            //menu = new SearchCostumerMenu();
+            menu = new SearchCostumerMenu(new CostumerBL(new Repository()));
             break;
         case "ViewStore":
             break;

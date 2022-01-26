@@ -1,9 +1,12 @@
-namespace StoreModel
+namespace StoreModel;
+public class LineItems
 {
-    public class LineItems
+    public string Product { get; set; }
+    public int Quantity { get; set; }
+
+    public override string ToString()
     {
-        public string Product { get; set; }
-        public int Quantity { get; set; }
-        
+        return $"Name of Product: {Product}\nQuantity: {Quantity}";
     }
+    
 }
