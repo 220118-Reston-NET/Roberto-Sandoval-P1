@@ -37,7 +37,7 @@ public class CostumerBL : ICostumerBL
         List<StoreFront> _costumerList = _repo.ListOfStores();
         foreach (var curr in _costumerList)
         {
-            // If costumer exists in database return true and object
+            // If store exists in database return true and object
             if (curr.Name == p_name && curr.Address == p_address)
                 return (curr, true);
         }

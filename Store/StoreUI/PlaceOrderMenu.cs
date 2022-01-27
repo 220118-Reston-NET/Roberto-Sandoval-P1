@@ -18,8 +18,10 @@ public class PlaceOrderMenu : IMenu
     bool finishedSelecting = false;
     public void ShowMenu()
     {
+        Console.WriteLine("Store Management System 2.0");
+        //Console.WriteLine(_newCostumer.ToString());
         Console.WriteLine("Please Select an Option");
-        Console.WriteLine($"[3] Costumer: {_newCostumer.ToString}");
+        Console.WriteLine($"[3] Select Costumer");
         Console.WriteLine("[2] Items:");
         if (readyToProcess)
             Console.WriteLine("[1] Place Order");
@@ -54,8 +56,15 @@ public class PlaceOrderMenu : IMenu
                 return "PlaceOrderMenu";
             case "4":
                 (_newCostumer, readyToProcess) = _costumerBL.findCostumer(_newCostumer.Name, _newCostumer.Phone);
-                Console.WriteLine("Costumer Exists in DataBase");
-                Console.WriteLine("Press ENTER to return and");
+                if (readyToProcess)
+                {
+                    Console.WriteLine("Costumer Exists in DataBase");
+                    Console.WriteLine("Press ENTER to return and finish order");
+                    Console.ReadLine();
+                    return "PlaceOrderMenu";
+                }
+                Console.WriteLine("Costumer Doesn't Exists in DataBase");
+                Console.WriteLine("Press ENTER to go back and change details");
                 Console.ReadLine();
                 
                 return "PlaceOrderMenu";

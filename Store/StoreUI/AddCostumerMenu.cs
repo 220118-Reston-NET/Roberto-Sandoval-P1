@@ -51,7 +51,11 @@ public class AddCostumerMenu : IMenu
             case "5":
                 bool proceed = checkFilled();
                 if (proceed)
+                {
+                    _newCostumer = new Costumer();
+                    Log.Information($"User addded costumer {_newCostumer.ToString}");
                     return "MainMenu";
+                }
                 else
                     return "AddCostumer";
             default:

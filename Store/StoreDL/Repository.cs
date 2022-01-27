@@ -13,11 +13,11 @@ public class Repository : IRepository
 
     public Costumer AddCostumer(Costumer p_costumer)
     {
-        List<Costumer> _costumerList = new List<Costumer>();
+        List<Costumer> _costumerList = ListOfCostumers();
         _costumerList.Add(p_costumer);
 
         string path = _filepath + "Costumer.json";
-        _jsonstring = JsonSerializer.Serialize(_costumerList);
+        _jsonstring = JsonSerializer.Serialize(_costumerList, new JsonSerializerOptions {WriteIndented = true});
 
         File.WriteAllText(path, _jsonstring);
 
@@ -73,6 +73,19 @@ public class Repository : IRepository
 
         // Write all the data from the json string into the file
         File.WriteAllText(path, _jsonstring);
+    }
+
+    public Products AddProduct(Products p_product)
+    {
+        List<Products> _productList = ListOfProducts();
+        _productList.Add(p_product);
+
+        string path = _filepath + "Products.json";
+        _jsonstring = JsonSerializer.Serialize(_productList, new JsonSerializerOptions {WriteIndented = true});
+
+        File.WriteAllText(path, _jsonstring);
+
+        return p_product;
     }
 
 }
