@@ -15,6 +15,7 @@ public class PlaceOrderMenu : IMenu
     }
 
     bool readyToProcess = false;
+    bool finishedSelecting = false;
     public void ShowMenu()
     {
         Console.WriteLine("Please Select an Option");

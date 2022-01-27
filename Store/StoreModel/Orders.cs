@@ -14,11 +14,6 @@ public class Orders
         Price = 0.0;
     }
 
-    public void addToOrder(Products p_product)
-    {
-        _itemList.Add(p_product);
-    }
-
     public override string ToString()
     {
         return $"Name: {Name}\nPhone Total Price: {Price}";

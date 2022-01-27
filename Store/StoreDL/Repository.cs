@@ -4,47 +4,75 @@ using System.Text.Json;
 namespace StoreDL;
 public class Repository : IRepository
 {
-    private static List<Costumer> _costumerList = new List<Costumer>();
-    //private List<StoreFront> _storeList = new List<StoreFront>(); 
+    //private static List<Costumer> _costumerList = new List<Costumer>();
+    //private List<StoreFront> _storeList = new List<StoreFront>();
+    //private static List<Products> _productsList = new List<Products>(); 
 
     private string _filepath = "../StoreDL/Database/";
     private string _jsonstring;
 
     public Costumer AddCostumer(Costumer p_costumer)
     {
+        List<Costumer> _costumerList = new List<Costumer>();
         _costumerList.Add(p_costumer);
 
         string path = _filepath + "Costumer.json";
-
         _jsonstring = JsonSerializer.Serialize(_costumerList);
 
         File.WriteAllText(path, _jsonstring);
-
-        //loadCostumer();
 
         return p_costumer;
     }
 
     public List<Costumer> ListOfCostumers(){
         // Converting JSON to Object
-        string jsonString2 = File.ReadAllText(_filepath + "Costumer.json");
+        string jsonString = File.ReadAllText(_filepath + "Costumer.json");
         
-        // Load Objects onto new dictionary
-        List<Costumer> _newCostumerList = JsonSerializer.Deserialize<List<Costumer>>(jsonString2);
-        return _costumerList = _newCostumerList;
-
+        // Load Objects onto new list
+        List<Costumer> _newCostumerList = JsonSerializer.Deserialize<List<Costumer>>(jsonString);
+        return _newCostumerList;
     }
 
-    // public Costumer findCostumer(String p_name, string p_phone)
-    // {
-    //     foreach (var curr in _costumerList)
-    //     {
-    //         if (curr.Name == p_name && curr.Phone == p_phone)
-    //         {
-    //             Console.WriteLine("Costumer does excist in database");
-    //             return;
-    //         }
-    //     }
-    //     Console.WriteLine("costumer does not excist in database");
-    // }
+    public List<Products> ListOfProducts(){
+        // Converting JSON to Object
+        string jsonString = File.ReadAllText(_filepath + "Products.json");
+        
+        // Load Objects onto new list
+        List<Products> _newProductsList = JsonSerializer.Deserialize<List<Products>>(jsonString);
+        return _newProductsList;
+    }
+
+    public List<StoreFront> ListOfStores(){
+        // Converting JSON to Object
+        string jsonString = File.ReadAllText(_filepath + "Stores.json");
+        
+        // Load Objects onto new list
+        List<StoreFront> _newStoresList = JsonSerializer.Deserialize<List<StoreFront>>(jsonString);
+        return _newStoresList;
+    }
+
+    public void addOrder(Costumer p_costumer, Orders p_order)
+    {
+        // Get file path to costumer json file
+        string path = _filepath + "Costumer.json";
+
+        // Read everything in the file into a string
+        string jsonString = File.ReadAllText(path);
+        
+        // Load all the data from the json file into a costumer list
+        List<Costumer> _newCostumerList = JsonSerializer.Deserialize<List<Costumer>>(jsonString);
+
+        for (int i = 0; i < _newCostumerList.Count; i++)
+        {
+            if (_newCostumerList[i].Name == p_costumer.Name && _newCostumerList[i].Phone == p_costumer.Phone)
+                _newCostumerList[i]._orders.Add(p_order);
+        }
+
+        // Turn the whole list into a json string
+        _jsonstring = JsonSerializer.Serialize(_newCostumerList);
+
+        // Write all the data from the json string into the file
+        File.WriteAllText(path, _jsonstring);
+    }
+
 }

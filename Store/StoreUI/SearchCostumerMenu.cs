@@ -56,17 +56,18 @@ public class SearchCostumerMenu : IMenu
         if (_newCostumer.Name!=".Name" && _newCostumer.Phone!=".Phone")
         {
             (Costumer _curr, bool found) = _costumerBL.findCostumer(_newCostumer.Name,_newCostumer.Phone);
-
             if (found)
+            {
+                Console.WriteLine("Costumer was successfully found in the Database");
+                Console.WriteLine(_curr.ToString());
+                
+            }
+            else
             {
                 Console.WriteLine("Costumer Was Not Found in the Databse");
                 Console.WriteLine("Add costumer to Database if Needed");
             }
-            else{
 
-                Console.WriteLine("Costumer was successfully found in the Database");
-                Console.WriteLine(_curr.ToString());
-            }
             Console.WriteLine("Press ENTER to go back to Main Menu");
             Console.ReadLine();
             return true;
@@ -78,10 +79,5 @@ public class SearchCostumerMenu : IMenu
             Console.ReadLine();
             return false;
         }
-    }
-
-    public void doSearch()
-    {
-
     }
 }
