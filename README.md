@@ -10,4 +10,6 @@ for either a store in the system or a costumer.
 - View current inventory for stores
 - View order history for costumer or store
 ## Implementations
-- Data Base
+- JSON based Data Base system
+- Front end Menu infrastructure for user
+- Back end Costumer, Product, and Store models
