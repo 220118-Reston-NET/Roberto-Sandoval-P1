@@ -39,7 +39,9 @@ public class MainMenu : IMenu
             case "7":
                 return "ReplenishInventory";
             default:
-                Console.WriteLine("You have chosen an invalid pick");
+                Console.WriteLine("You Have Entered An Invalid Choice");
+                Console.WriteLine("Press ENTER to try again");
+                Console.ReadLine();
                 return "MainMenu";
                 
         }

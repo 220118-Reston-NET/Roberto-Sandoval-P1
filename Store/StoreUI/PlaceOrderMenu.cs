@@ -70,7 +70,7 @@ public class PlaceOrderMenu : IMenu
                 return "PlaceOrderMenu";
         
             default:
-                Console.WriteLine("You have chosen an invalid pick");
+                Console.WriteLine("You Have Entered An Invalid Choice");
                 Console.WriteLine("Press ENTER to try again");
                 Console.ReadLine();
                 return "PlaceOrderMenu";

@@ -59,7 +59,7 @@ public class AddCostumerMenu : IMenu
                 else
                     return "AddCostumer";
             default:
-                Console.WriteLine("You have chosen an invalid pick");
+                Console.WriteLine("You Have Entered An Invalid Choice");
                 Console.WriteLine("Press ENTER to try again");
                 Console.ReadLine();
                 return "AddCostumer";

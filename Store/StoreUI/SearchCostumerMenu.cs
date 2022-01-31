@@ -23,9 +23,9 @@ public class SearchCostumerMenu : IMenu
 
     public string UserPick()
     {
-        string pickedChoice = Console.ReadLine();
+        string choice = Console.ReadLine();
 
-        switch (pickedChoice)
+        switch (choice)
         {
             case "0":
                 return "MainMenu";
@@ -44,7 +44,7 @@ public class SearchCostumerMenu : IMenu
                 _newCostumer.Name = Console.ReadLine();
                 return "SearchCostumer";
             default:
-                Console.WriteLine("You have chosen an invalid pick");
+                Console.WriteLine("You Have Entered An Invalid Choice");
                 Console.WriteLine("Press ENTER to try again");
                 Console.ReadLine();
                 return "SearchCostumerMenu";
