@@ -21,7 +21,6 @@ public class PlaceOrderMenu : IMenu
     public void ShowMenu()
     {
         Console.WriteLine("Store Management System 2.0");
-        //Console.WriteLine(_newCostumer.ToString());
         Console.WriteLine("Please Select an Option");
         Console.WriteLine("[3] Add/Change Costumer");
         Console.WriteLine("[2] Add Items");
@@ -38,33 +37,39 @@ public class PlaceOrderMenu : IMenu
             case "0":
                 return "MainMenu";
             case"1":
+                _costumerBL.addOrder(_newCostumer, _listOfProducts);
+                Console.WriteLine("Your Order Has Been Succesfully Placed");
+                Console.WriteLine("Press ENTER To Go Back To Main Menu");
+                Console.ReadLine();
+                return"MainMenu";
                 
             case "2":
                 _listOfProducts.Add(_currProduct);
-                //_costumerBL.addOrder(_newCostumer, _listOfProducts);
                 Console.WriteLine("The Item has Been Succesfully Added To Your Order");
-                //processInput();
-                return "ItemsMenu";
+                Console.WriteLine("Press ENTER to Continue");
+                Console.ReadLine();
+                return "PlaceOrder";
             case "3":
                 Console.WriteLine("Please Enter Costumer Name");
                 _newCostumer.Name = Console.ReadLine();
                 Console.WriteLine("Please Enter Costumer Phone Number");
                 _newCostumer.Phone = Console.ReadLine();
-                return "PlaceOrderMenu";
-            case "4":
+                
                 (_newCostumer, readyToProcess) = _costumerBL.findCostumer(_newCostumer);
                 if (readyToProcess)
                 {
-                    Console.WriteLine("Costumer Exists in DataBase");
-                    Console.WriteLine("Press ENTER to return and finish order");
+                    Console.WriteLine("Costumer Has Been Added To Order");
+                    Console.WriteLine("Costumer:");
+                    Console.WriteLine(_newCostumer.ToString());
+                    Console.WriteLine("Press ENTER To Reurn And Continue With Order");
                     Console.ReadLine();
-                    return "PlaceOrderMenu";
+                    return "PlaceOrder";
                 }
                 Console.WriteLine("Costumer Doesn't Exists in DataBase");
-                Console.WriteLine("Press ENTER to go back and change details");
+                Console.WriteLine("Press ENTER To Continue");
                 Console.ReadLine();
                 
-                return "PlaceOrderMenu";
+                return "PlaceOrder";
         
             default:
                 Console.WriteLine("You Have Entered An Invalid Choice");
@@ -72,36 +77,6 @@ public class PlaceOrderMenu : IMenu
                 Console.ReadLine();
                 return "PlaceOrderMenu";
         }
-    }
-
-    public void processInput()
-    {
-        bool addNext=true;
-        string yesNo="";
-        while (addNext)
-        {
-        // Place order and save order to costumer's lsit of orders
-        _listOfProducts.Add(_currProduct);
-        //_costumerBL.addOrder(_newCostumer, _listOfProducts);
-        Console.WriteLine("The Item has Been Succesfully Added To Your Order");
-        Console.WriteLine("Would you like to add another item to order");
-        Console.WriteLine("[1] Yes");
-        Console.WriteLine("[0] No");
-        yesNo=Console.ReadLine();
-        if(yesNo == "0")
-        {
-            Console.WriteLine("Press ENTER to finish and go back to the Main Menu And");
-            Console.ReadLine();
-            break;
-        }
-        else if (yesNo == "1")
-        {
-            continue;
-        }
-        else
-            return;
-        }
-
     }
 
 
