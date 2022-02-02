@@ -20,7 +20,7 @@ class ReplenishInventoryMenu : IMenu
         if(searchValidated)
             Console.WriteLine("[1] Replenish Selected Store");
         else
-            Console.WriteLine("[2] Search Selected Store");
+            Console.WriteLine("[2] Search For Inputted Store");
         Console.WriteLine("[0] Return to Main Menu");
         
     }
@@ -38,6 +38,8 @@ class ReplenishInventoryMenu : IMenu
                 return "ReplenishInventory";
             case "3":
                 return "ReplenishInventory";
+            case "4":
+                return "ReplinishInventory";
             default:
                 Console.WriteLine("You Have Entered An Invalid Choice");
                 Console.WriteLine("Press ENTER to try again");

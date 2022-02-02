@@ -5,14 +5,41 @@ namespace StoreBL;
 
 public class StoreFrontBL : IStoreFrontBL
 {
-    public void listOfItems()
+    private IRepository _repo;
+    public StoreFrontBL(IRepository p_repo)
     {
-        Console.WriteLine("List of Items");
+        _repo = p_repo;
+    }
 
-        // foreach (var item in collection)
-        // {
-            
-        // }
+    public (StoreFront, bool) findStore(StoreFront p_storeFront)
+    {
+        List<StoreFront> _storeFrontList = _repo.ListOfStores();
+        foreach (var curr in _storeFrontList)
+        {
+            // If store exists in database return true and object
+            if (curr.Name == p_storeFront.Name && curr.Address == p_storeFront.Address)
+                return (curr, true);
+        }
+        //Console.WriteLine("costumer does not excist in database");
+
+        StoreFront empty = new StoreFront();
+        return (empty, false);
+    }
+
+    public void listItems(StoreFront p_store)
+    {
+        foreach(var curr in p_store._productList)
+        {
+            Console.WriteLine(curr.ToString);
+        }
+    }
+
+    public void listOrders(StoreFront p_store)
+    {
+        foreach(var curr in p_store._odersList)
+        {
+            Console.WriteLine(curr.ToString);
+        }
     }
     
 }

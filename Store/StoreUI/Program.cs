@@ -3,11 +3,20 @@
 using StoreUI;
 using StoreBL;
 using StoreDL;
+using Microsoft.Extensions.Configuration;
 
 // Initializing program logging for debugging
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("./logs/debuglog.txt") //We configure our logger to save in this file
     .CreateLogger();
+
+// Getting connection string from json file
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appSettings.json")
+    .Build();
+
+string _connectionString = configuration.GetConnectionString("StoreDatabase");
 
 bool repeat = true;
 IMenu menu = new MainMenu();

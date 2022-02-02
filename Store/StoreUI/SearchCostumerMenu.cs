@@ -14,7 +14,7 @@ public class SearchCostumerMenu : IMenu
     public void ShowMenu()
     {
         Console.WriteLine("Store Management System 2.0");
-        Console.WriteLine("Enter the Following Costumer Information to do a Search ");
+        Console.WriteLine("Enter the Following Costumer Information to do a Search");
         Console.WriteLine($"[3] Name: {_newCostumer.Name}");
         Console.WriteLine($"[2] Phone: {_newCostumer.Phone}");
         Console.WriteLine("[1] Search");
@@ -55,7 +55,7 @@ public class SearchCostumerMenu : IMenu
     {
         if (_newCostumer.Name!=".Name" && _newCostumer.Phone!=".Phone")
         {
-            (Costumer _curr, bool found) = _costumerBL.findCostumer(_newCostumer.Name,_newCostumer.Phone);
+            (Costumer _curr, bool found) = _costumerBL.findCostumer(_newCostumer);
             if (found)
             {
                 Console.WriteLine("Costumer was successfully found in the Database");

@@ -6,8 +6,8 @@ public interface ICostumerBL
 {
     Costumer AddCostumer(Costumer p_costumer);
 
-    (Costumer, bool) findCostumer(String p_name, string p_phone);
+    (Costumer, bool) findCostumer(Costumer p_costumer);
 
-    void addOrder(String p_name, string p_phone, Orders p_order);
+    void addOrder(Costumer p_costumer, Orders p_order);
 
 }

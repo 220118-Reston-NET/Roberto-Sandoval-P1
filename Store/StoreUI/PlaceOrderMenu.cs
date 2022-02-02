@@ -40,7 +40,7 @@ public class PlaceOrderMenu : IMenu
                 return "MainMenu";
             case"1":
                 // Place order and save order to costumer's lsit of orders
-                _costumerBL.addOrder(_newCostumer.Name, _newCostumer.Phone, _newOrder);
+                _costumerBL.addOrder(_newCostumer, _newOrder);
                 Console.WriteLine("The Order Has Been Succesfully Placed");
                 Console.WriteLine("Press ENTER to finish and go back to the Main Menu");
                 Console.ReadLine();
@@ -55,7 +55,7 @@ public class PlaceOrderMenu : IMenu
                 _newCostumer.Phone = Console.ReadLine();
                 return "PlaceOrderMenu";
             case "4":
-                (_newCostumer, readyToProcess) = _costumerBL.findCostumer(_newCostumer.Name, _newCostumer.Phone);
+                (_newCostumer, readyToProcess) = _costumerBL.findCostumer(_newCostumer);
                 if (readyToProcess)
                 {
                     Console.WriteLine("Costumer Exists in DataBase");

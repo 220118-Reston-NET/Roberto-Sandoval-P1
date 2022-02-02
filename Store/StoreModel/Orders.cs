@@ -1,7 +1,7 @@
 namespace StoreModel;
 public class Orders
 {
-
+    public int OrderNumber { get; set; }
     public List<LineItems> _itemList;
     public string StoreFront { get; set; }
     public double Price { get; set; }
@@ -16,7 +16,7 @@ public class Orders
 
     public override string ToString()
     {
-        return $"Store: {StoreFront}\nTotal Price: {Price}";
+        return $"Store: {StoreFront}\nTotal Total: {Price}";
     }
 
     
