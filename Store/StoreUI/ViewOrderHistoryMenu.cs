@@ -5,6 +5,7 @@ namespace StoreUI;
 
 class ViewORderHistoryMenu : IMenu
 {
+    private List<Products> _productsForOrder = new List<Products>();
     private static Costumer _newCostumer = new Costumer();
     private static StoreFront _newStore = new StoreFront();
 
@@ -109,6 +110,7 @@ class ViewORderHistoryMenu : IMenu
                 (Costumer curr, bool proceed) =_costumerBL.findCostumer(_newCostumer);
                 if(proceed)
                 {
+                    _costumerBL.listOrders(curr);
                     keep=false;
                 }
             }

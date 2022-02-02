@@ -32,10 +32,23 @@ public class CostumerBL : ICostumerBL
         return (empty, false);
     }
 
-    public void addOrder(Costumer p_costumer, Orders p_order)
+    public void addOrder(Costumer p_costumer, List<Products> p_products)
     {
         (Costumer curr, bool readyToGo) = findCostumer(p_costumer);
-        curr._orders.Add(p_order);
+
+        foreach (var product in p_products)
+        {
+            // Create new order instance to add onto
+            // add products to order and then add to costumer's order
+        }
+        //curr._orders.Add(p_order);
     }
     
+    public void listOrders(Costumer p_costumer)
+    {
+        foreach(var curr in p_costumer._orders)
+        {
+            Console.WriteLine(curr.ToString);
+        }
+    }
 }   
