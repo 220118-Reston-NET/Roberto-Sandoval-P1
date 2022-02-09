@@ -14,14 +14,18 @@ public class AddCostumerMenu : IMenu
     }
     public void ShowMenu()
     {
-        Console.WriteLine("Store Management System 2.0");
-        Console.WriteLine("Enter Costumer Information");
-        Console.WriteLine($"[1] Name: {_newCostumer.Name}");
-        Console.WriteLine($"[2] Phone: {_newCostumer.Phone}");
-        Console.WriteLine($"[3] Address: {_newCostumer.Address}");
-        Console.WriteLine($"[4] Email: {_newCostumer.Email}");
-        Console.WriteLine("[5] Save");
-        Console.WriteLine("[0] Return to Main Menu (Changes won't be saved)");
+        Console.WriteLine("==================================================");
+        Console.WriteLine("           Store Management System 2.0  ");
+        Console.WriteLine("==================================================");
+        Console.WriteLine();
+        Console.WriteLine("             Enter Costumer Information\n");
+        Console.WriteLine($"             <1> Name: {_newCostumer.Name}");
+        Console.WriteLine($"             <2> Phone: {_newCostumer.Phone}");
+        Console.WriteLine($"             <3> Address: {_newCostumer.Address}");
+        Console.WriteLine($"             <4> Email: {_newCostumer.Email}");
+        Console.WriteLine("             <5> Save");
+        Console.WriteLine("             <0> Return to Main Menu (Changes won't be saved)\n\n");
+        Console.Write(" Choice: ");
     }
 
     public string UserPick()

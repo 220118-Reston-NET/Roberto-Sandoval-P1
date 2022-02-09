@@ -22,6 +22,13 @@ CREATE TABLE Stores(
 
 CREATE TABLE Orders(
 	orderNumber int PRIMARY KEY,
-	orderStore varchar(50),
-	orderPrice float
+	costumerId int FOREIGN KEY REFERENCES Costumers(costumerId), --Foreign key reflecting costumerId or storeNumber
+	storeNumber int FOREIGN KEY REFERENCES Stores(storeNumber),
+	productId int FOREIGN KEY REFERENCES Products (productId)
+)
+
+CREATE TABLE LineItems(
+	storeNumber int FOREIGN KEY REFERENCES Stores(storeNumber), -- Foreign key
+	productId int FOREIGN KEY REFERENCES Products(productId), -- Foreign key
+	quantity int
 )

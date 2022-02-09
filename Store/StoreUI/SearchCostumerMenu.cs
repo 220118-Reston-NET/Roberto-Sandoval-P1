@@ -13,12 +13,16 @@ public class SearchCostumerMenu : IMenu
     }
     public void ShowMenu()
     {
-        Console.WriteLine("Store Management System 2.0");
-        Console.WriteLine("Enter the Following Costumer Information to do a Search");
-        Console.WriteLine($"[3] Name: {_newCostumer.Name}");
-        Console.WriteLine($"[2] Phone: {_newCostumer.Phone}");
-        Console.WriteLine("[1] Search");
-        Console.WriteLine("[0] Return to Main Menu (Changes won't be saved)");
+        Console.WriteLine("==================================================");
+        Console.WriteLine("           Store Management System 2.0  ");
+        Console.WriteLine("==================================================");
+        Console.WriteLine();
+        Console.WriteLine("         Enter the Following Costumer Information to do a Search\n");
+        Console.WriteLine($"             <3> Name: {_newCostumer.Name}");
+        Console.WriteLine($"             <2> Phone: {_newCostumer.Phone}");
+        Console.WriteLine("             <1> Search");
+        Console.WriteLine("             <0> Return to Main Menu (Changes won't be saved)\n\n");
+        Console.Write(" Choice: ");
     }
 
     public string UserPick()
@@ -58,12 +62,14 @@ public class SearchCostumerMenu : IMenu
             (Costumer _curr, bool found) = _costumerBL.findCostumer(_newCostumer);
             if (found)
             {
+                Console.WriteLine("");
                 Console.WriteLine("Costumer was successfully found in the Database");
                 Console.WriteLine(_curr.ToString());
                 
             }
             else
             {
+                Console.WriteLine("");
                 Console.WriteLine("Costumer Was Not Found in the Databse");
                 Console.WriteLine("Add costumer to Database if Needed");
             }
@@ -74,6 +80,7 @@ public class SearchCostumerMenu : IMenu
         }
         else
         {
+            Console.WriteLine("");
             Console.WriteLine("Please enter costumer information into every field to search");
             Console.WriteLine("Press ENTER to go back and finish");
             Console.ReadLine();

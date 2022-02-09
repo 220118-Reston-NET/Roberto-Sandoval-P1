@@ -88,4 +88,8 @@ public class Repository : IRepository
         return p_product;
     }
 
+    public List<Orders> ListOfOrders()
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -2,21 +2,18 @@ namespace StoreModel;
 public class Orders
 {
     public int OrderNumber { get; set; }
-    public List<LineItems> _itemList;
-    public string StoreFront { get; set; }
-    public double Price { get; set; }
-
-    public StoreFront store;
+    public int CostumerId { get; set; }
+    public int StoreNumber { get; set; }
+    public double OrderTotal { get; set; }
 
     public Orders()
     {
-        _itemList =  new List<LineItems>();
-        Price = 0.0;
+        OrderNumber = 000;
     }
 
     public override string ToString()
     {
-        return $"Store: {StoreFront}\nTotal Total: {Price}";
+        return $"Order Number: {OrderNumber}\nOrder Total: {OrderTotal}";
     }
 
     

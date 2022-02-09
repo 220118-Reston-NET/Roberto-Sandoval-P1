@@ -9,19 +9,26 @@ class ReplenishInventoryMenu : IMenu
     bool finishedSelecting = false;
     bool searchValidated = false;
 
-    
+    private IStoreFrontBL _storeFrontBL;
+    public ReplenishInventoryMenu(IStoreFrontBL p_storeFrontBL)
+    {
+        _storeFrontBL = p_storeFrontBL;
+    }
+
 
     public void ShowMenu()
     {
-        Console.WriteLine("Store Management System 2.0");
-        Console.WriteLine("Enter Store Information");
-        Console.WriteLine($"[4] Name: {_newStore.Name}");
-        Console.WriteLine($"[3] Address: {_newStore.Address}");
-        if(searchValidated)
-            Console.WriteLine("[1] Replenish Selected Store");
-        else
-            Console.WriteLine("[2] Search For Inputted Store");
-        Console.WriteLine("[0] Return to Main Menu");
+        Console.WriteLine("==================================================");
+        Console.WriteLine("           Store Management System 2.0  ");
+        Console.WriteLine("==================================================");
+        Console.WriteLine();
+        Console.WriteLine("             Enter Store Information\n");
+        Console.WriteLine($"             <4> Name: {_newStore.StoreName}");
+        Console.WriteLine($"             <3> Address: {_newStore.StoreAddress}");
+        Console.WriteLine("             <2> Replenish Selected Store");
+        Console.WriteLine("             <1> List Items to Add to Store Inventory");
+        Console.WriteLine("             <0> Return to Main Menu\n\n");
+        Console.Write(" Choice: ");
         
     }
 
@@ -37,8 +44,12 @@ class ReplenishInventoryMenu : IMenu
             case "2":
                 return "ReplenishInventory";
             case "3":
+                Console.WriteLine("Please Enter Store Address");
+                _newStore.StoreAddress = Console.ReadLine();
                 return "ReplenishInventory";
             case "4":
+                Console.WriteLine("Please Enter Store Name");
+                _newStore.StoreName = Console.ReadLine();
                 return "ReplinishInventory";
             default:
                 Console.WriteLine("You Have Entered An Invalid Choice");
@@ -49,8 +60,17 @@ class ReplenishInventoryMenu : IMenu
         
     }
 
-    public bool checkFilled()
+    public void checkFilled()
     {
-        throw new NotImplementedException();
+        if (_newStore.StoreName != ".StoreName" && _newStore.StoreAddress != ".StoreAddress")
+        {
+            _storeFrontBL.findStore(_newStore);
+        }
+        else
+        {
+            Console.WriteLine("Please Finish FIlling in Store Details");
+            Console.WriteLine("Press ENTER t ocontinue");
+            Console.ReadLine();
+        }
     }
 }

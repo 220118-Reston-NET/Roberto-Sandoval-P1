@@ -7,6 +7,7 @@ public interface IRepository
     List<Costumer> ListOfCostumers();
     List<Products> ListOfProducts();
     List<StoreFront> ListOfStores();
+    List<Orders> ListOfOrders();
     void addOrder(Costumer p_costumer, Orders p_order);
 
 }

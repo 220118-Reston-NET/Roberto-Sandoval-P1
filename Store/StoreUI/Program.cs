@@ -39,6 +39,7 @@ while(repeat)
             repeat = false;
             break;
         case "MainMenu":
+            Log.Information("User entered main menu");
             menu = new MainMenu();
             break;
         case "AddCostumer":
@@ -53,16 +54,24 @@ while(repeat)
             Log.Information("User went into PlaceOrder menu");
             menu = new PlaceOrderMenu(new CostumerBL(new Repository()));
             break;
-        case "ViewStore":
+        case "ViewStoreInventory":
+            Log.Information("USer selected ViewStoreFront inventory menu");
+            menu = new ViewStoreInventoryMenu(new StoreFrontBL(new Repository()));
             break;
-        case "StoreOrderHistory":
-            break;
-        case "CostumerOrderHistory":
+        case "OrderHistory":
+            Log.Information("User went itno OrderHistory menu");
+            menu = new ViewOrderHistoryMenu(new CostumerBL(new Repository()), new StoreFrontBL(new Repository()));
             break;
         case "ReplenishInventory":
+            Log.Information("USer went into ReplenishINventory menu");
+            menu = new ReplenishInventoryMenu(new StoreFrontBL(new Repository()));
             break;
         default:
-            Console.WriteLine("An error has occured");
+            Log.Information("Program reached dafault case in switch (an error occured). Returning user to main menu");
+            Console.WriteLine("An error has occured while processing your request");
+            Console.WriteLine("Press ENTER to return to main menu");
+            Console.ReadLine();
+            menu = new MainMenu();
             break;
     }
 }

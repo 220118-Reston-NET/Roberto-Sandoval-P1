@@ -4,16 +4,19 @@ public class MainMenu : IMenu
 {
     public void ShowMenu()
     {
-        Console.WriteLine("Store Management System 2.0");
-        Console.WriteLine("What would you like to do today?");
-        Console.WriteLine("[1] Add Costumer");
-        Console.WriteLine("[2] Search for Costumer");
-        Console.WriteLine("[3] View Store Front Inventory");
-        Console.WriteLine("[4] Place Order");
-        Console.WriteLine("[5] View Store Order History");
-        Console.WriteLine("[6] View Costumer Order History");
-        Console.WriteLine("[7] Replenish Inventory");
-        Console.WriteLine("[0] Exit");
+        Console.WriteLine("==================================================");
+        Console.WriteLine("           Store Management System 2.0  ");
+        Console.WriteLine("==================================================");
+        Console.WriteLine();
+        Console.WriteLine("         What would you like to do today?\n");
+        Console.WriteLine("             <1> Add Costumer");
+        Console.WriteLine("             <2> Search for Costumer");
+        Console.WriteLine("             <3> View Store Inventory");
+        Console.WriteLine("             <4> Place Order");
+        Console.WriteLine("             <5> View Order History");
+        Console.WriteLine("             <6> Replenish Inventory");
+        Console.WriteLine("             <0> Exit\n\n");
+        Console.Write(" Choice: ");
     }
 
     public string UserPick()
@@ -29,14 +32,12 @@ public class MainMenu : IMenu
             case "2":
                 return "SearchCostumer";
             case "3":
-                return "ViewStore";
+                return "ViewStoreInventory";
             case "4":
                 return "PlaceOrder";
             case "5":
-                return "StoreOrderHistory";
+                return "OrderHistory";
             case "6":
-                return "CostumerOrderHistory";
-            case "7":
                 return "ReplenishInventory";
             default:
                 Console.WriteLine("You Have Entered An Invalid Choice");

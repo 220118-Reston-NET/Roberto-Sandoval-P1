@@ -3,7 +3,7 @@ using StoreModel;
 
 namespace StoreUI;
 
-class ViewORderHistoryMenu : IMenu
+class ViewOrderHistoryMenu : IMenu
 {
     private List<Products> _productsForOrder = new List<Products>();
     private static Costumer _newCostumer = new Costumer();
@@ -11,35 +11,28 @@ class ViewORderHistoryMenu : IMenu
 
     private ICostumerBL _costumerBL;
     private IStoreFrontBL _storeFrontBL;
-    public ViewORderHistoryMenu(ICostumerBL p_costumerBL, IStoreFrontBL p_storeFrontBL)
+    public ViewOrderHistoryMenu(ICostumerBL p_costumerBL, IStoreFrontBL p_storeFrontBL)
     {
         _costumerBL = p_costumerBL;
         _storeFrontBL = p_storeFrontBL;
     }
 
 
-    bool frameSelected = false;
+    //bool frameSelected = false;
     bool selectedCostumer = false;
     bool selectedStore = false;
     //int orderNumber=0;
     public void ShowMenu()
     {
-        Console.WriteLine("Store Management System 2.0");
-
-        if (frameSelected && selectedCostumer)
-        {
-            Console.WriteLine("Please Enter CostumerNumber");
-            //orderNumber=Convert.ToInt32(Console.ReadLine());
-        }
-        else if (frameSelected && selectedStore)
-        {
-
-        }
-
-        Console.WriteLine("Please Select Order Type to Search");
-        Console.WriteLine("[2] Costumer");
-        Console.WriteLine("[1] Store");
-        Console.WriteLine("[0] Main Menu");
+        Console.WriteLine("==================================================");
+        Console.WriteLine("           Store Management System 2.0  ");
+        Console.WriteLine("==================================================");
+        Console.WriteLine();
+        Console.WriteLine("         Please Select Order Type to Search\n");
+        Console.WriteLine("             <2> Costumer");
+        Console.WriteLine("             <1> Store");
+        Console.WriteLine("             <0> Main Menu\n\n");
+        Console.Write(" Choice: ");
     }
 
     public string UserPick()
@@ -51,15 +44,15 @@ class ViewORderHistoryMenu : IMenu
             case "0":
                 return "MainMenu";
             case "1":
-                frameSelected=true;
+                //frameSelected=true;
                 selectedStore=true;
-                return "ViewOrderHistoryMenu";
+                processInput();
+                return "MainMenu";
             case "2":
-                frameSelected=true;
+                //frameSelected=true;
                 selectedCostumer=true;
-                return "ViewOrderHistoryMenu";
-            case "3":
-                return "ViewOrderHistoryMenu";
+                processInput();
+                return "MainMenu";
             default:
                 Console.WriteLine("You Have Entered An Invalid Choice");
                 Console.WriteLine("Press ENTER to try again");
@@ -71,6 +64,7 @@ class ViewORderHistoryMenu : IMenu
 
     public void processInput()
     {
+        Console.WriteLine("Inside process input");
         bool keep=true;
         if(selectedStore)
         {
@@ -78,10 +72,10 @@ class ViewORderHistoryMenu : IMenu
             {
                 Console.WriteLine("Please Enter The Following Store Information");
                 Console.WriteLine("Name");
-                _newStore.Name = Console.ReadLine();
+                _newStore.StoreName = Console.ReadLine();
                 Console.WriteLine("Press ENTER");
                 Console.WriteLine("Address");
-                _newStore.Address = Console.ReadLine();
+                _newStore.StoreAddress = Console.ReadLine();
                 Console.WriteLine("Press ENTER to confirm information");
                 (StoreFront curr, bool proceed) =_storeFrontBL.findStore(_newStore);
                 if(proceed)
@@ -114,10 +108,6 @@ class ViewORderHistoryMenu : IMenu
                     keep=false;
                 }
             }
-
-        }
-        else
-        {
 
         }
     }

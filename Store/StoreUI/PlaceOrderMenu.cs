@@ -20,12 +20,16 @@ public class PlaceOrderMenu : IMenu
     bool finishedSelecting = false;
     public void ShowMenu()
     {
-        Console.WriteLine("Store Management System 2.0");
-        Console.WriteLine("Please Select an Option");
-        Console.WriteLine("[3] Add/Change Costumer");
-        Console.WriteLine("[2] Add Items");
-        Console.WriteLine("[1] Place Order");
-        Console.WriteLine("[0] Go Back to Main Menu");
+        Console.WriteLine("==================================================");
+        Console.WriteLine("           Store Management System 2.0  ");
+        Console.WriteLine("==================================================");
+        Console.WriteLine();
+        Console.WriteLine("             Please Select an Option\n");
+        Console.WriteLine("             <3> Add/Change Costumer");
+        Console.WriteLine("             <2> Add Items");
+        Console.WriteLine("             <1> Place Order");
+        Console.WriteLine("             <0> Go Back to Main Menu\n\n");
+        Console.Write(" Choice: ");
     }
 
     public string UserPick()
@@ -37,13 +41,26 @@ public class PlaceOrderMenu : IMenu
             case "0":
                 return "MainMenu";
             case"1":
-                _costumerBL.addOrder(_newCostumer, _listOfProducts);
-                Console.WriteLine("Your Order Has Been Succesfully Placed");
-                Console.WriteLine("Press ENTER To Go Back To Main Menu");
-                Console.ReadLine();
+                // Get costumerId and add it to order
+                if (readyToProcess){
+                    Log.Information("User has placed an order");
+                    _costumerBL.addOrder(_newCostumer, _listOfProducts);
+                    Console.WriteLine("Your Order Has Been Succesfully Placed");
+                    Console.WriteLine("Press ENTER To Go Back To Main Menu");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Please finish adding a costumer to order");
+                    Console.WriteLine("Presente ENTER to continue");
+                    Console.ReadLine();
+                    return "PlaceOrder";
+                }
                 return"MainMenu";
                 
             case "2":
+                // Add store to order from
+                // List products
                 _listOfProducts.Add(_currProduct);
                 Console.WriteLine("The Item has Been Succesfully Added To Your Order");
                 Console.WriteLine("Press ENTER to Continue");
