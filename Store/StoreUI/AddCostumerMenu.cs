@@ -23,7 +23,7 @@ public class AddCostumerMenu : IMenu
         Console.WriteLine($"             <2> Phone: {_newCostumer.Phone}");
         Console.WriteLine($"             <3> Address: {_newCostumer.Address}");
         Console.WriteLine($"             <4> Email: {_newCostumer.Email}");
-        Console.WriteLine("             <5> Save");
+        Console.WriteLine("             <5> Add Costumer and Return to Main Menu");
         Console.WriteLine("             <0> Return to Main Menu (Changes won't be saved)\n\n");
         Console.Write(" Choice: ");
     }
@@ -53,7 +53,7 @@ public class AddCostumerMenu : IMenu
                 _newCostumer.Email = Console.ReadLine();
                 return "AddCostumer";
             case "5":
-                bool proceed = checkFilled();
+                bool proceed = processInput();
                 if (proceed)
                 {
                     _newCostumer = new Costumer();
@@ -70,7 +70,7 @@ public class AddCostumerMenu : IMenu
         }
     }
 
-    public bool checkFilled()
+    public bool processInput()
     {
         if (_newCostumer.Name!=".Name" && _newCostumer.Phone!=".Phone" && _newCostumer.Address!=".Address" && _newCostumer.Email !=".Email")
         {

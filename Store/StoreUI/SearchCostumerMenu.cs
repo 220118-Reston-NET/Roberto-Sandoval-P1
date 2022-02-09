@@ -34,7 +34,7 @@ public class SearchCostumerMenu : IMenu
             case "0":
                 return "MainMenu";
             case "1":
-                bool proceed = checkFilled();
+                bool proceed = processInput();
                 if (proceed)
                     return "MainMenu";
                 else
@@ -55,7 +55,7 @@ public class SearchCostumerMenu : IMenu
         }
     }
 
-    public bool checkFilled()
+    public bool processInput()
     {
         if (_newCostumer.Name!=".Name" && _newCostumer.Phone!=".Phone")
         {

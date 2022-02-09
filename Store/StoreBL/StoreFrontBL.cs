@@ -27,20 +27,12 @@ public class StoreFrontBL : IStoreFrontBL
         return (empty, false);
     }
 
-    public void listItems(StoreFront p_store)
+    public List<Products> listInventory(int p_storeNumber)
     {
-        // foreach(var curr in p_store._productList)
-        // {
-        //     Console.WriteLine(curr.ToString);
-        // }
+        List<Products> inventoryList = _repo.ListInventory(p_storeNumber);
+
+
+        return inventoryList;
     }
 
-    public void listOrders(StoreFront p_store)
-    {
-        // foreach(var curr in p_store._odersList)
-        // {
-        //     Console.WriteLine(curr.ToString);
-        // }
-    }
-    
 }

@@ -88,7 +88,12 @@ public class Repository : IRepository
         return p_product;
     }
 
-    public List<Orders> ListOfOrders()
+    public List<Products> ListInventory(int p_storeNumber)
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<Orders> ListOfOrders(int p_costumerId)
     {
         throw new NotImplementedException();
     }

@@ -199,3 +199,9 @@
 2022-02-09 08:51:55.629 -08:00 [INF] USer went into ReplenishINventory menu
 2022-02-09 08:51:56.685 -08:00 [INF] User entered main menu
 2022-02-09 08:51:59.862 -08:00 [INF] User exited program
+2022-02-09 09:07:10.899 -08:00 [INF] User went into PlaceOrder menu
+2022-02-09 09:07:44.959 -08:00 [INF] User entered main menu
+2022-02-09 09:08:10.930 -08:00 [INF] User exited program
+2022-02-09 09:08:18.573 -08:00 [INF] User went into PlaceOrder menu
+2022-02-09 09:08:45.860 -08:00 [INF] User entered main menu
+2022-02-09 09:08:46.331 -08:00 [INF] User exited program

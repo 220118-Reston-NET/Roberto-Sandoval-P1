@@ -44,26 +44,26 @@ while(repeat)
             break;
         case "AddCostumer":
             Log.Information("User selected AddCostumer menu");
-            menu = new AddCostumerMenu(new CostumerBL(new Repository()));
+            menu = new AddCostumerMenu(new CostumerBL(new SQLRepository(_connectionString)));
             break;
         case "SearchCostumer":
             Log.Information("User selected SearchCostumer menu");
-            menu = new SearchCostumerMenu(new CostumerBL(new Repository()));
+            menu = new SearchCostumerMenu(new CostumerBL(new SQLRepository(_connectionString)));
             break;
         case "PlaceOrder":
             Log.Information("User went into PlaceOrder menu");
-            menu = new PlaceOrderMenu(new CostumerBL(new Repository()));
+            menu = new PlaceOrderMenu(new CostumerBL(new SQLRepository(_connectionString)), new StoreFrontBL(new SQLRepository(_connectionString)));
             break;
         case "ViewStoreInventory":
             Log.Information("USer selected ViewStoreFront inventory menu");
-            menu = new ViewStoreInventoryMenu(new StoreFrontBL(new Repository()));
+            menu = new ViewStoreInventoryMenu(new StoreFrontBL(new SQLRepository(_connectionString)));
             break;
         case "OrderHistory":
             Log.Information("User went itno OrderHistory menu");
-            menu = new ViewOrderHistoryMenu(new CostumerBL(new Repository()), new StoreFrontBL(new Repository()));
+            menu = new ViewOrderHistoryMenu(new CostumerBL(new Repository()));
             break;
         case "ReplenishInventory":
-            Log.Information("USer went into ReplenishINventory menu");
+            Log.Information("User went into ReplenishINventory menu");
             menu = new ReplenishInventoryMenu(new StoreFrontBL(new Repository()));
             break;
         default:

@@ -32,7 +32,7 @@ public class CostumerBL : ICostumerBL
         return (empty, false);
     }
 
-    public void addOrder(Costumer p_costumer, List<Products> p_products)
+    public void placeOrder(Costumer p_costumer, List<Products> p_products)
     {
         (Costumer curr, bool readyToGo) = findCostumer(p_costumer);
 
@@ -50,5 +50,12 @@ public class CostumerBL : ICostumerBL
         {
             Console.WriteLine(curr.ToString);
         }
+    }
+
+    public List<Orders> orderHistory(int p_costumerId)
+    {
+        List<Orders> orderList = _repo.ListOfOrders(p_costumerId);
+
+        return orderList;
     }
 }   

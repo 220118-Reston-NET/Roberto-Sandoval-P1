@@ -26,7 +26,7 @@ class ReplenishInventoryMenu : IMenu
         Console.WriteLine($"             <4> Name: {_newStore.StoreName}");
         Console.WriteLine($"             <3> Address: {_newStore.StoreAddress}");
         Console.WriteLine("             <2> Replenish Selected Store");
-        Console.WriteLine("             <1> List Items to Add to Store Inventory");
+        //Console.WriteLine("             <1> List Items to Add to Store Inventory");
         Console.WriteLine("             <0> Return to Main Menu\n\n");
         Console.Write(" Choice: ");
         
@@ -60,7 +60,7 @@ class ReplenishInventoryMenu : IMenu
         
     }
 
-    public void checkFilled()
+    public void processInput()
     {
         if (_newStore.StoreName != ".StoreName" && _newStore.StoreAddress != ".StoreAddress")
         {
