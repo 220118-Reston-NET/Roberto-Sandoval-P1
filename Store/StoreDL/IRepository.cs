@@ -8,7 +8,11 @@ public interface IRepository
     List<Products> ListOfProducts();
     List<StoreFront> ListOfStores();
     List<Orders> ListOfOrders(int p_costumerId);
-    List<Products> ListInventory(int p_storeNumber);
-    void addOrder(Costumer p_costumer, Orders p_order);
+    List<StoreInventory> ListInventory(int p_storeNumber);
+    void addOrder(List<LineItems> p_lineItemsList, Orders p_order);
+    void subtractInventory(List<StoreInventory> p_stock);
+    void addInventory(List<StoreInventory> p_stock);
+
+    int createCostumerId();
 
 }

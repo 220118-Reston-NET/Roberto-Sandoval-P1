@@ -21,15 +21,16 @@ string _connectionString = configuration.GetConnectionString("StoreDatabase");
 bool repeat = true;
 IMenu menu = new MainMenu();
 
-Console.WriteLine("Database has been initialized succesfully");
-Console.WriteLine("Press ENTER to continue");
+// Console.WriteLine("Database has been initialized succesfully");
+// Console.WriteLine("Press ENTER to continue");
 
-
+int storeNumber = 0;
 while(repeat)
 {
     Console.Clear();
     menu.ShowMenu();
     string choice = menu.UserPick();
+    
 
     switch (choice)
     {
@@ -60,11 +61,11 @@ while(repeat)
             break;
         case "OrderHistory":
             Log.Information("User went itno OrderHistory menu");
-            menu = new ViewOrderHistoryMenu(new CostumerBL(new Repository()));
+            menu = new ViewOrderHistoryMenu(new CostumerBL(new SQLRepository(_connectionString)));
             break;
         case "ReplenishInventory":
             Log.Information("User went into ReplenishINventory menu");
-            menu = new ReplenishInventoryMenu(new StoreFrontBL(new Repository()));
+            menu = new ReplenishInventoryMenu(new StoreFrontBL(new SQLRepository(_connectionString)));
             break;
         default:
             Log.Information("Program reached dafault case in switch (an error occured). Returning user to main menu");

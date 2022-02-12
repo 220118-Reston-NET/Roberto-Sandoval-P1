@@ -30,7 +30,7 @@ public class Costumer
 
     public override string ToString()
     {
-        return $"Name: {Name}\nPhone Number: {Phone}\nAddress: {Address}\nEmail: {Email}";
+        return $"ID: {CostumerId}\nName: {Name}\nPhone Number: {Phone}\nAddress: {Address}\nEmail: {Email}";
     }
     
 }

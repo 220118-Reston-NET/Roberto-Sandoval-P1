@@ -4,7 +4,7 @@ namespace StoreBL;
 
 public interface ICostumerBL
 {
-    Costumer AddCostumer(Costumer p_costumer);
+    void AddCostumer(Costumer p_costumer);
 
     (Costumer, bool) findCostumer(Costumer p_costumer);
 
@@ -13,5 +13,6 @@ public interface ICostumerBL
     void listOrders(Costumer p_costumer);
 
     List<Orders> orderHistory(int p_costumerId);
+    int createCostumerId();
 
 }

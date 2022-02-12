@@ -97,4 +97,29 @@ public class Repository : IRepository
     {
         throw new NotImplementedException();
     }
+
+    public void subtractInventory(List<StoreInventory> p_stock)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void addInventory(List<StoreInventory> p_stock)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void addOrder(List<LineItems> p_lineItemsList, Orders p_order)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int createCostumerId()
+    {
+        throw new NotImplementedException();
+    }
+
+    List<StoreInventory> IRepository.ListInventory(int p_storeNumber)
+    {
+        throw new NotImplementedException();
+    }
 }

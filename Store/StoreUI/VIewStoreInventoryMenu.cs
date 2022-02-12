@@ -7,8 +7,9 @@ public class ViewStoreInventoryMenu : IMenu
 {
     private static StoreFront _newStore = new StoreFront();
     //private bool readyForOrder = false;
-    private List<Products> _listOfProducts = new List<Products>();
+    private List<StoreInventory> _listOfInventory = new List<StoreInventory>();
     private bool storeFound = true;
+    private bool readyForOrder = false;
 
     private IStoreFrontBL _storeFrontBL;
     public ViewStoreInventoryMenu(IStoreFrontBL p_storeFrontBL)
@@ -19,16 +20,17 @@ public class ViewStoreInventoryMenu : IMenu
 
     public void ShowMenu()
     {
-        Console.WriteLine("==================================================");
-        Console.WriteLine("           Store Management System 2.0  ");
-        Console.WriteLine("==================================================");
+        Console.WriteLine("===============================================================");
+        Console.WriteLine("                  Store Management System 2.0");
+        Console.WriteLine("===============================================================");
         Console.WriteLine();
-        Console.WriteLine("         Please Fill In the Following Store Information\n");
-        Console.WriteLine($"             <4> Store Name: {_newStore.StoreName}");
-        Console.WriteLine($"             <3> Store Address: {_newStore.StoreAddress}");
-        //Console.WriteLine("[2] Start a Costumer Purchse From Selected Store");
-        Console.WriteLine("             <1> Search For Store and List Its Inventory");
-        Console.WriteLine("             <0> Return to Main Menu\n\n");
+        Console.WriteLine("                       -- View Inventory --");
+        Console.WriteLine("");
+        Console.WriteLine("                 Please Fill In the Following Store Information\n");
+        Console.WriteLine($"                    <3> Store Number: {_newStore.StoreNumber}");
+        //Console.WriteLine("<2> Start a Costumer Purchse From Selected Store");
+        Console.WriteLine("                    <1> Search For Store and List Inventory");
+        Console.WriteLine("                    <0> Return to Main Menu\n\n");
         Console.Write(" Choice: ");
     }
 
@@ -46,7 +48,7 @@ public class ViewStoreInventoryMenu : IMenu
             // case "2":
             //     if (readyForOrder)
             //     {
-            //         // proceed with order
+            //         storeNumber = _newStore.StoreNumber;
             //         return "PlaceOrder";
             //     }
             //     else
@@ -58,12 +60,9 @@ public class ViewStoreInventoryMenu : IMenu
             //     }
                 
             case "3":
-                Console.WriteLine("Please Enter Store Address");
-                _newStore.StoreAddress = Console.ReadLine();
-                return "ViewStoreInventory";
-            case "4":
-                Console.WriteLine("Please Enter Store Name");
-                _newStore.StoreName = Console.ReadLine();
+                Console.WriteLine("");
+                Console.WriteLine("Please Enter Store Number");
+                _newStore.StoreNumber = Convert.ToInt32(Console.ReadLine());
                 return "ViewStoreInventory";
             default:
                 Console.WriteLine("");
@@ -77,16 +76,17 @@ public class ViewStoreInventoryMenu : IMenu
 
     public void processInput()
     {
-        if (_newStore.StoreName!=".StoreName" && _newStore.StoreAddress!=".StoreAddress")
+        if (_newStore.StoreNumber!=000)
         {
             (StoreFront _curr, bool found) = _storeFrontBL.findStore(_newStore);
 
             if(found)
             {
-                _listOfProducts = _storeFrontBL.listInventory(_curr.StoreNumber);
-                foreach (var item in _listOfProducts)
+                _listOfInventory = _storeFrontBL.listInventory(_curr.StoreNumber);
+                Console.WriteLine("");
+                foreach (var item in _listOfInventory)
                 {
-                    Console.WriteLine(item.ToString);
+                    Console.WriteLine(item.ToString());
                 }
                 
                 Console.WriteLine("Press ENTER to Continue");

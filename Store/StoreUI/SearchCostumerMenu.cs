@@ -13,15 +13,17 @@ public class SearchCostumerMenu : IMenu
     }
     public void ShowMenu()
     {
-        Console.WriteLine("==================================================");
-        Console.WriteLine("           Store Management System 2.0  ");
-        Console.WriteLine("==================================================");
+        Console.WriteLine("===============================================================");
+        Console.WriteLine("                  Store Management System 2.0");
+        Console.WriteLine("===============================================================");
         Console.WriteLine();
-        Console.WriteLine("         Enter the Following Costumer Information to do a Search\n");
-        Console.WriteLine($"             <3> Name: {_newCostumer.Name}");
-        Console.WriteLine($"             <2> Phone: {_newCostumer.Phone}");
-        Console.WriteLine("             <1> Search");
-        Console.WriteLine("             <0> Return to Main Menu (Changes won't be saved)\n\n");
+        Console.WriteLine("                       -- Costumer Search --");
+        Console.WriteLine("");
+        Console.WriteLine("                 Enter the Following Costumer Information to do a Search\n");
+        Console.WriteLine($"                    <3> Name: {_newCostumer.Name}");
+        Console.WriteLine($"                    <2> Phone: {_newCostumer.Phone}");
+        Console.WriteLine("                    <1> Search");
+        Console.WriteLine("                    <0> Return to Main Menu (Changes won't be saved)\n\n");
         Console.Write(" Choice: ");
     }
 
@@ -36,18 +38,24 @@ public class SearchCostumerMenu : IMenu
             case "1":
                 bool proceed = processInput();
                 if (proceed)
+                {
+                    _newCostumer = new Costumer();
                     return "MainMenu";
+                }
                 else
                     return "SearchCostumer";
             case "2":
+                Console.WriteLine("");
                 Console.WriteLine("Please Enter Costumer Phone Number");
                 _newCostumer.Phone = Console.ReadLine();
                 return "SearchCostumer";
             case "3":
+                Console.WriteLine("");
                 Console.WriteLine("Please Enter Costumer Name:");
                 _newCostumer.Name = Console.ReadLine();
                 return "SearchCostumer";
             default:
+                Console.WriteLine("");
                 Console.WriteLine("You Have Entered An Invalid Choice");
                 Console.WriteLine("Press ENTER to try again");
                 Console.ReadLine();

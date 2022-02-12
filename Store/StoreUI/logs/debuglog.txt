@@ -205,3 +205,130 @@
 2022-02-09 09:08:18.573 -08:00 [INF] User went into PlaceOrder menu
 2022-02-09 09:08:45.860 -08:00 [INF] User entered main menu
 2022-02-09 09:08:46.331 -08:00 [INF] User exited program
+2022-02-10 13:40:00.606 -08:00 [INF] User went into PlaceOrder menu
+2022-02-10 13:40:10.125 -08:00 [INF] User went into PlaceOrder menu
+2022-02-10 23:04:50.945 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:05:03.411 -08:00 [INF] User entered main menu
+2022-02-10 23:05:03.964 -08:00 [INF] User exited program
+2022-02-10 23:06:57.172 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:07:20.007 -08:00 [INF] User entered main menu
+2022-02-10 23:07:21.838 -08:00 [INF] User selected SearchCostumer menu
+2022-02-10 23:07:26.182 -08:00 [INF] User entered main menu
+2022-02-10 23:07:27.717 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-10 23:07:57.610 -08:00 [INF] User entered main menu
+2022-02-10 23:08:01.207 -08:00 [INF] User went into PlaceOrder menu
+2022-02-10 23:08:15.428 -08:00 [INF] User entered main menu
+2022-02-10 23:09:01.420 -08:00 [INF] User exited program
+2022-02-10 23:09:21.259 -08:00 [INF] User exited program
+2022-02-10 23:09:37.025 -08:00 [INF] User exited program
+2022-02-10 23:09:59.047 -08:00 [INF] User exited program
+2022-02-10 23:11:01.024 -08:00 [INF] User exited program
+2022-02-10 23:11:13.974 -08:00 [INF] User exited program
+2022-02-10 23:11:34.783 -08:00 [INF] User exited program
+2022-02-10 23:11:58.732 -08:00 [INF] User exited program
+2022-02-10 23:12:29.821 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:12:36.150 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:12:41.051 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:12:58.156 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:13:06.097 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:16:27.256 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:16:32.109 -08:00 [INF] User entered main menu
+2022-02-10 23:16:34.646 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:16:36.679 -08:00 [INF] User entered main menu
+2022-02-10 23:16:38.462 -08:00 [INF] User selected AddCostumer menu
+2022-02-10 23:16:58.386 -08:00 [INF] User entered main menu
+2022-02-10 23:17:00.079 -08:00 [INF] User selected SearchCostumer menu
+2022-02-10 23:17:14.737 -08:00 [INF] User entered main menu
+2022-02-10 23:17:17.246 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-10 23:17:30.708 -08:00 [INF] User entered main menu
+2022-02-10 23:17:34.208 -08:00 [INF] User went into PlaceOrder menu
+2022-02-10 23:17:35.607 -08:00 [INF] User entered main menu
+2022-02-10 23:17:37.514 -08:00 [INF] User went itno OrderHistory menu
+2022-02-10 23:17:40.952 -08:00 [INF] User entered main menu
+2022-02-10 23:17:43.109 -08:00 [INF] User went itno OrderHistory menu
+2022-02-10 23:17:50.746 -08:00 [INF] User entered main menu
+2022-02-10 23:18:01.391 -08:00 [INF] User went itno OrderHistory menu
+2022-02-10 23:18:04.915 -08:00 [INF] User entered main menu
+2022-02-10 23:18:06.634 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-10 23:18:09.305 -08:00 [INF] User entered main menu
+2022-02-10 23:18:15.402 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-10 23:18:38.761 -08:00 [INF] User entered main menu
+2022-02-10 23:19:07.228 -08:00 [INF] User exited program
+2022-02-10 23:19:15.667 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-10 23:19:22.156 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-10 23:19:24.632 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-10 23:19:26.342 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-11 07:00:39.829 -08:00 [INF] User entered main menu
+2022-02-11 07:00:40.586 -08:00 [INF] User exited program
+2022-02-11 09:51:59.555 -08:00 [INF] User exited program
+2022-02-11 10:34:45.400 -08:00 [INF] User went into PlaceOrder menu
+2022-02-11 10:35:03.468 -08:00 [INF] User entered main menu
+2022-02-11 11:17:48.597 -08:00 [INF] User exited program
+2022-02-11 11:18:43.314 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:18:49.342 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:19:03.957 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:19:12.829 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:19:23.142 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:22:36.139 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:22:39.906 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:22:48.233 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:22:55.134 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:23:21.462 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:24:33.940 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:24:42.916 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:24:45.702 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:24:48.915 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:24:52.022 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:25:29.258 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:25:34.440 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:25:36.821 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:25:39.100 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:25:41.241 -08:00 [INF] User selected AddCostumer menu
+2022-02-11 11:25:48.985 -08:00 [INF] User addded costumer System.Func`1[System.String]
+2022-02-11 11:25:48.985 -08:00 [INF] User entered main menu
+2022-02-11 11:26:04.787 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:28:58.438 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:29:03.464 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:29:29.200 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:29:33.947 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:29:37.734 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:30:50.868 -08:00 [INF] User entered main menu
+2022-02-11 11:30:53.341 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:30:59.439 -08:00 [INF] User entered main menu
+2022-02-11 11:31:00.588 -08:00 [INF] User exited program
+2022-02-11 11:31:07.731 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:31:11.591 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:31:15.264 -08:00 [INF] User selected SearchCostumer menu
+2022-02-11 11:31:19.749 -08:00 [INF] User entered main menu
+2022-02-11 11:32:09.671 -08:00 [INF] User exited program
+2022-02-12 02:05:12.555 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:05:38.956 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:05:43.429 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:06:14.983 -08:00 [INF] User entered main menu
+2022-02-12 02:06:15.903 -08:00 [INF] User exited program
+2022-02-12 02:06:21.825 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:06:25.670 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:06:33.027 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:06:36.770 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:07:43.971 -08:00 [INF] User entered main menu
+2022-02-12 02:07:44.347 -08:00 [INF] User exited program
+2022-02-12 02:07:53.029 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:07:56.976 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:08:40.919 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:08:44.507 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:08:54.473 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:12:31.127 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:12:32.837 -08:00 [INF] User entered main menu
+2022-02-12 02:12:33.180 -08:00 [INF] User exited program
+2022-02-12 02:12:42.310 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:12:45.852 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:13:22.025 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:13:24.505 -08:00 [INF] User entered main menu
+2022-02-12 02:13:25.182 -08:00 [INF] User exited program
+2022-02-12 02:14:02.390 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:14:19.665 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:14:31.839 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-12 02:14:34.016 -08:00 [INF] User entered main menu
+2022-02-12 02:14:35.376 -08:00 [INF] User selected AddCostumer menu
+2022-02-12 02:14:38.316 -08:00 [INF] User entered main menu
+2022-02-12 02:14:42.521 -08:00 [INF] User exited program

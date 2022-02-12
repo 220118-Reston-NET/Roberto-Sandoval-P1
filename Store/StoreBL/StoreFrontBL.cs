@@ -18,7 +18,7 @@ public class StoreFrontBL : IStoreFrontBL
         foreach (var curr in _storeFrontList)
         {
             // If store exists in database return true and object
-            if (curr.StoreName == p_storeFront.StoreName && curr.StoreAddress == p_storeFront.StoreAddress)
+            if (curr.StoreNumber == p_storeFront.StoreNumber)
                 return (curr, true);
         }
         //Console.WriteLine("costumer does not excist in database");
@@ -27,12 +27,23 @@ public class StoreFrontBL : IStoreFrontBL
         return (empty, false);
     }
 
-    public List<Products> listInventory(int p_storeNumber)
+    public List<StoreInventory> listInventory(int p_storeNumber)
     {
-        List<Products> inventoryList = _repo.ListInventory(p_storeNumber);
-
+        List<StoreInventory> inventoryList = _repo.ListInventory(p_storeNumber);
 
         return inventoryList;
+    }
+
+    public void subtractInventory(List<StoreInventory> p_storeInventory)
+    {
+        _repo.subtractInventory(p_storeInventory);
+
+    }
+
+    public void addInventory(List<StoreInventory> p_storeInventory)
+    {
+        _repo.subtractInventory(p_storeInventory);
+
     }
 
 }

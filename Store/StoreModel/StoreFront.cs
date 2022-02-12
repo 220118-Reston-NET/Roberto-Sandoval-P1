@@ -4,9 +4,7 @@ public class StoreFront
     public int StoreNumber { get; set; }
     public string StoreName { get; set; }
     public string StoreAddress { get; set; }
-
-    //public List<Products> _productList;
-    //public List<Orders> _odersList;
+    public List<StoreInventory> _inventoryList { get; set; }
 
     public StoreFront()
     {

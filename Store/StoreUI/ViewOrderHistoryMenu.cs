@@ -15,15 +15,17 @@ class ViewOrderHistoryMenu : IMenu
     }
     public void ShowMenu()
     {
-        Console.WriteLine("==================================================");
-        Console.WriteLine("           Store Management System 2.0  ");
-        Console.WriteLine("==================================================");
+        Console.WriteLine("===============================================================");
+        Console.WriteLine("                  Store Management System 2.0");
+        Console.WriteLine("===============================================================");
         Console.WriteLine();
-        Console.WriteLine("         Please Select Order Type to Search\n");
-        Console.WriteLine($"             <3> Name: {_newCostumer.Name}");
-        Console.WriteLine($"             <2> Phone: {_newCostumer.Phone}");
-        Console.WriteLine("             <1> View Order History");
-        Console.WriteLine("             <0> Main Menu\n\n");
+        Console.WriteLine("                       -- Order History --");
+        Console.WriteLine("");
+        Console.WriteLine("                 Please Select Order Type to Search\n");
+        Console.WriteLine($"                    <3> Name: {_newCostumer.Name}");
+        Console.WriteLine($"                    <2> Phone: {_newCostumer.Phone}");
+        Console.WriteLine("                    <1> View Order History");
+        Console.WriteLine("                    <0> Main Menu\n\n");
         Console.Write(" Choice: ");
     }
 
@@ -39,14 +41,17 @@ class ViewOrderHistoryMenu : IMenu
                 processInput();
                 return "MainMenu";
             case "2":
+                Console.WriteLine("");
                 Console.WriteLine("Please Enter Costumer Phone Number");
                 _newCostumer.Phone = Console.ReadLine();
                 return "OrderHistory";
             case "3":
+                Console.WriteLine("");
                 Console.WriteLine("Please Enter Costumer Name:");
                 _newCostumer.Name = Console.ReadLine();
                 return "OrderHistory";
             default:
+                Console.WriteLine("");
                 Console.WriteLine("You Have Entered An Invalid Choice");
                 Console.WriteLine("Press ENTER to try again");
                 Console.ReadLine();

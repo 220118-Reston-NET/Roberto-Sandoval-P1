@@ -11,9 +11,9 @@ public class CostumerBL : ICostumerBL
         _repo = p_repo;
     }
 
-    public Costumer AddCostumer(Costumer p_costumer)
+    public void AddCostumer(Costumer p_costumer)
     {
-        return _repo.AddCostumer(p_costumer);
+        _repo.AddCostumer(p_costumer);
     }
 
     public (Costumer, bool) findCostumer(Costumer p_costumer)
@@ -26,7 +26,6 @@ public class CostumerBL : ICostumerBL
             if (curr.Name == p_costumer.Name && curr.Phone == p_costumer.Phone)
                 return (curr, true);
         }
-        //Console.WriteLine("costumer does not excist in database");
 
         Costumer empty = new Costumer();
         return (empty, false);
@@ -34,14 +33,30 @@ public class CostumerBL : ICostumerBL
 
     public void placeOrder(Costumer p_costumer, List<Products> p_products)
     {
-        (Costumer curr, bool readyToGo) = findCostumer(p_costumer);
+        List<LineItems> _lineItemsList = new List<LineItems>();
+        LineItems _lineItem = new LineItems();
+        Orders _newOrder = new Orders();
+        double _orderTotal = 0.0;
+        int _orderNumber = 000; // change field
 
-        foreach (var product in p_products)
+        foreach (var item in p_products)
         {
-            // Create new order instance to add onto
-            // add products to order and then add to costumer's order
+            _lineItem.OrderNumber = _orderNumber; 
+            _lineItem.ProductId = item.ProductId;
+            _lineItem.Quantity = item.ProductQuantity;
+            _lineItemsList.Add(_lineItem);
+            _orderTotal += (item.ProductPrice*item.ProductQuantity);
         }
-        //curr._orders.Add(p_order);
+
+        _newOrder.OrderNumber = _orderNumber;
+        _newOrder.CostumerId = p_costumer.CostumerId;
+        _newOrder.StoreNumber = 000;
+        _newOrder.OrderTotal = _orderTotal;
+        _newOrder.OrderedItems = _lineItemsList;
+
+        _repo.addOrder(_lineItemsList, _newOrder);
+        
+    
     }
     
     public void listOrders(Costumer p_costumer)
@@ -57,5 +72,10 @@ public class CostumerBL : ICostumerBL
         List<Orders> orderList = _repo.ListOfOrders(p_costumerId);
 
         return orderList;
+    }
+
+    public int createCostumerId()
+    {
+        return _repo.createCostumerId();
     }
 }   

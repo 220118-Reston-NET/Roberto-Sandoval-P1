@@ -4,18 +4,20 @@ public class MainMenu : IMenu
 {
     public void ShowMenu()
     {
-        Console.WriteLine("==================================================");
-        Console.WriteLine("           Store Management System 2.0  ");
-        Console.WriteLine("==================================================");
+        Console.WriteLine("===============================================================");
+        Console.WriteLine("                  Store Management System 2.0");
+        Console.WriteLine("===============================================================");
         Console.WriteLine();
-        Console.WriteLine("         What would you like to do today?\n");
-        Console.WriteLine("             <1> Add Costumer");
-        Console.WriteLine("             <2> Search for Costumer");
-        Console.WriteLine("             <3> View Store Inventory");
-        Console.WriteLine("             <4> Place Order");
-        Console.WriteLine("             <5> View Order History");
-        Console.WriteLine("             <6> Replenish Inventory");
-        Console.WriteLine("             <0> Exit\n\n");
+        Console.WriteLine("                       -- Main Menu --");
+        Console.WriteLine("");
+        Console.WriteLine("                What would you like to do today?\n");
+        Console.WriteLine("                    <1> Add Costumer");
+        Console.WriteLine("                    <2> Search for Costumer");
+        Console.WriteLine("                    <3> View Store Inventory");
+        Console.WriteLine("                    <4> Place Order");
+        Console.WriteLine("                    <5> View Order History");
+        Console.WriteLine("                    <6> Replenish Inventory");
+        Console.WriteLine("                    <0> Exit\n\n");
         Console.Write(" Choice: ");
     }
 
