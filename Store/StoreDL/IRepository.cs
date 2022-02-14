@@ -10,9 +10,9 @@ public interface IRepository
     List<Orders> ListOfOrders(int p_costumerId);
     List<StoreInventory> ListInventory(int p_storeNumber);
     void addOrder(List<LineItems> p_lineItemsList, Orders p_order);
-    void subtractInventory(List<StoreInventory> p_stock);
+    void subtractInventory(List<StoreInventory> p_products);
     void addInventory(List<StoreInventory> p_stock);
-
     int createCostumerId();
+    int createOrderId();
 
 }

@@ -26,7 +26,7 @@ class ReplenishInventoryMenu : IMenu
         Console.WriteLine("");
         Console.WriteLine("                     Enter Store Information\n");
         Console.WriteLine($"                    <3> Store Number: {_newStore.StoreNumber}");
-        Console.WriteLine("                    <2> Add Item to Replenish Queue");
+        Console.WriteLine("                    <2> Add Item and Quantity");
         Console.WriteLine("                    <1> Finish Replenish Request");
         Console.WriteLine("                    <0> Return to Main Menu Without Changing Inventory\n\n");
         Console.Write(" Choice: ");
@@ -48,7 +48,7 @@ class ReplenishInventoryMenu : IMenu
                 Console.WriteLine("");
                 Console.WriteLine("Enter Item Number");
                 _newItem.ProductId = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Quantity");
+                Console.WriteLine("Enter Total Store Quantity (Current Quantity + New Inventory Quantity");
                 _newItem.Quantity = Convert.ToInt32(Console.ReadLine());
                 _newItem.StoreNumber = _newStore.StoreNumber;
                 _inventoryList.Add(_newItem);

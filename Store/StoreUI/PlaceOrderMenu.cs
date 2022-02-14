@@ -77,12 +77,10 @@ public class PlaceOrderMenu : IMenu
             case "0":
                 return "MainMenu";
             case"1":
-                
                 // Add list of products onto database
                 if (readyToProcess){
-                    // Subtract items from store inventory\
+                    // Subtract items from store inventory
                     _storeFrontBL.subtractInventory(_listOfStock);
-                    //_storeFrontBL.subtractInventory();
                     _costumerBL.placeOrder(_newCostumer, _listOfProducts);
                     Log.Information("User has placed an order");
 

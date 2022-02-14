@@ -5,7 +5,7 @@ namespace StoreUI;
 
 class ViewOrderHistoryMenu : IMenu
 {
-    private List<Products> _productsForOrder = new List<Products>();
+    //private List<Products> _productsForOrder = new List<Products>();
     private static Costumer _newCostumer = new Costumer();
 
     private ICostumerBL _costumerBL;
@@ -21,7 +21,7 @@ class ViewOrderHistoryMenu : IMenu
         Console.WriteLine();
         Console.WriteLine("                       -- Order History --");
         Console.WriteLine("");
-        Console.WriteLine("                 Please Select Order Type to Search\n");
+        Console.WriteLine("                  Please Enter Required Information\n");
         Console.WriteLine($"                    <3> Name: {_newCostumer.Name}");
         Console.WriteLine($"                    <2> Phone: {_newCostumer.Phone}");
         Console.WriteLine("                    <1> View Order History");
@@ -62,11 +62,28 @@ class ViewOrderHistoryMenu : IMenu
 
     public void processInput()
     {
-        List<Orders> orderList = _costumerBL.orderHistory(_newCostumer.CostumerId);
-
-        foreach (var item in orderList)
+        (_newCostumer, bool found) = _costumerBL.findCostumer(_newCostumer);
+        if (found)
         {
-            Console.WriteLine(item.ToString);
+            List<Orders> orderList = _costumerBL.orderHistory(_newCostumer.CostumerId);
+            int i = 1;
+
+            foreach (var item in orderList)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Order {i}");
+                Console.WriteLine(item.ToString());
+                Console.WriteLine();
+            }
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();
+        }
+        else
+        {
+            _newCostumer = new Costumer();
+            Console.WriteLine("Costumer Doesn't Exist in Database");
+            Console.WriteLine("Press ENTER to go back and try again");
+            Console.ReadLine();
         }
     }
 }

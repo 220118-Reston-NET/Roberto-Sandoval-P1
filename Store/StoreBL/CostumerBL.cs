@@ -37,7 +37,7 @@ public class CostumerBL : ICostumerBL
         LineItems _lineItem = new LineItems();
         Orders _newOrder = new Orders();
         double _orderTotal = 0.0;
-        int _orderNumber = 000; // change field
+        int _orderNumber = createOrderId();
 
         foreach (var item in p_products)
         {
@@ -56,7 +56,6 @@ public class CostumerBL : ICostumerBL
 
         _repo.addOrder(_lineItemsList, _newOrder);
         
-    
     }
     
     public void listOrders(Costumer p_costumer)
@@ -77,5 +76,10 @@ public class CostumerBL : ICostumerBL
     public int createCostumerId()
     {
         return _repo.createCostumerId();
+    }
+
+    public int createOrderId()
+    {
+        return _repo.createOrderId();
     }
 }   

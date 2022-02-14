@@ -2,7 +2,7 @@ using StoreModel;
 using System.Text.Json;
 
 namespace StoreDL;
-public class Repository : IRepository
+public class Repository
 {
     //private static List<Costumer> _costumerList = new List<Costumer>();
     //private List<StoreFront> _storeList = new List<StoreFront>();
@@ -118,8 +118,4 @@ public class Repository : IRepository
         throw new NotImplementedException();
     }
 
-    List<StoreInventory> IRepository.ListInventory(int p_storeNumber)
-    {
-        throw new NotImplementedException();
-    }
 }

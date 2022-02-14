@@ -13,8 +13,8 @@ public class SQLRepository : IRepository
 
     public Costumer AddCostumer(Costumer p_costumer)
     {
-        string sqlQuery = @"insert into Costumers
-                            values(@costumerId, @costumerName, @costumerPhone, @costumerAddress, @costumerEmail)";
+        string sqlQuery = @"INSERT INTO Costumers
+                            VALUES(@costumerId, @costumerName, @costumerPhone, @costumerAddress, @costumerEmail)";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -37,8 +37,8 @@ public class SQLRepository : IRepository
 
     public void addOrder(List<LineItems> p_lineItemsList, Orders p_order)
     {
-        string sqlQuery = @"insert into Orders
-                            values(@orderNumber, @costumerId, @storeNumber";
+        string sqlQuery = @"INSERT INTO Orders
+                            VALUES(@orderNumber, @costumerId, @storeNumber";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -61,7 +61,7 @@ public class SQLRepository : IRepository
     {
         List<Costumer> costumerList = new List<Costumer>();
 
-        string sqlQuery = @"select * from Costumers";
+        string sqlQuery = @"SELECT * FROM Costumers";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         { 
@@ -89,7 +89,7 @@ public class SQLRepository : IRepository
     {
         List<Products> costumerList = new List<Products>();
 
-        string sqlQuery = @"select * from Products";
+        string sqlQuery = @"SELECT * FROM Products";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -117,7 +117,7 @@ public class SQLRepository : IRepository
     {
         List<StoreFront> storeList = new List<StoreFront>();
 
-        string sqlQuery = @"select * from Stores";
+        string sqlQuery = @"SELECT * FROM Stores";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -143,7 +143,7 @@ public class SQLRepository : IRepository
     {
         List<Orders> orderList = new List<Orders>();
 
-        string sqlQuery = @"select * from Orders o where o.costumerId ="+p_costumerId;
+        string sqlQuery = @"SELECT * FROM Orders o WHERE o.costumerId="+p_costumerId;
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -157,7 +157,8 @@ public class SQLRepository : IRepository
                 orderList.Add(new Orders(){
                     OrderNumber = reader.GetInt32(0),
                     CostumerId = reader.GetInt32(1),
-                    StoreNumber = reader.GetInt32(3)
+                    StoreNumber = reader.GetInt32(2),
+                    OrderTotal = reader.GetDouble(3)
                 });
             }
         }
@@ -169,8 +170,8 @@ public class SQLRepository : IRepository
     {
         List<StoreInventory> inventoryList = new List<StoreInventory>();
 
-        string sqlQuery = @"select s.storeNumber, p.productId, p.productName, p.productDescription, s.quantity
-             from Products p inner join StoreInventory s on p.productId=s.productId" ;
+        string sqlQuery = @"SELECT s.storeNumber, p.productId, p.productName, p.productDescription, s.quantity
+             FROM Products p INNER JOIN StoreInventory s ON p.productId=s.productId" ;
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -195,27 +196,69 @@ public class SQLRepository : IRepository
 
     }
 
-    public void subtractInventory(List<StoreInventory> p_stock)
-    {
-        string sqlQuery = @"";
-
-    }
-
     public void addInventory(List<StoreInventory> p_stock)
     {
-        string sqlQuery = @"";
+        string sqlQuery = "";
+        
+        foreach (var item in p_stock)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                sqlQuery = @"DELETE FROM StoreInventory s WHERE s.storeNumber=@storeNumber AND s.productId=@productId";
+
+                SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+                command.Parameters.AddWithValue("@storeNumber", item.StoreNumber);
+                command.Parameters.AddWithValue("@productId", item.ProductId);
+                command.Parameters.AddWithValue("@quantity", item.Quantity);
+
+                command.ExecuteNonQuery();
+
+                sqlQuery = @"INSERT INTO StoreInventory VALUES (@storeNumber, @productId, @quantity)";
+
+                command = new SqlCommand(sqlQuery, conn);
+
+                command.Parameters.AddWithValue("@storeNumber", item.StoreNumber);
+                command.Parameters.AddWithValue("@productId", item.ProductId);
+                command.Parameters.AddWithValue("@quantity", item.Quantity);
+
+                command.ExecuteNonQuery();
+
+            }
+        }
+        
     }
 
-    public void subtractInventory(List<Products> p_products, int p_storeNumber)
+    public void subtractInventory(List<StoreInventory> p_products)
     {
-        throw new NotImplementedException();
+        string sqlQuery = @"UPDATE StoreInventory s SET s.quantity = s.quantity - @quantity WHERE s.storeNumber=@storeNumber AND s.productId=@productId ";
+
+        foreach (var item in p_products)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+                    command.Parameters.AddWithValue("@storeNumber", item.StoreNumber);
+                    command.Parameters.AddWithValue("@productId", item.ProductId);
+                    command.Parameters.AddWithValue("@quantity", item.Quantity);
+
+                    command.ExecuteNonQuery();
+
+                }
+        }
+
     }
 
     public int createCostumerId()
     {
         int costumerId = 1000;
 
-        string sqlQuery = @"select count(*) from costumers";
+        string sqlQuery = @"SELECT count(*) FROM Costumers";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -235,7 +278,23 @@ public class SQLRepository : IRepository
 
     public int createOrderId()
     {
-        int orderNumber = 10000;
+        int orderNumber = 300000;
+
+        string sqlQuery = @"SELECT count(*) FROM Orders";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            conn.Open();
+            
+            SqlCommand command = new SqlCommand(sqlQuery, conn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                orderNumber += reader.GetInt32(0)*10;
+            }
+        }
+
 
         return orderNumber;
     }
