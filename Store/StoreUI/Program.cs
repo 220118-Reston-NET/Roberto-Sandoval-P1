@@ -21,9 +21,6 @@ string _connectionString = configuration.GetConnectionString("StoreDatabase");
 bool repeat = true;
 IMenu menu = new MainMenu();
 
-// Console.WriteLine("Database has been initialized succesfully");
-// Console.WriteLine("Press ENTER to continue");
-
 int storeNumber = 0;
 while(repeat)
 {

@@ -31,9 +31,11 @@ public class CostumerBL : ICostumerBL
         return (empty, false);
     }
 
-    public void placeOrder(Costumer p_costumer, List<Products> p_products)
+    public void processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber)
     {
-        List<LineItems> _lineItemsList = new List<LineItems>();
+        List<StoreInventory> _storeInventoryList = new List<StoreInventory>();
+
+        StoreInventory _storeInventoryItem = new StoreInventory();
         LineItems _lineItem = new LineItems();
         Orders _newOrder = new Orders();
         double _orderTotal = 0.0;
@@ -41,20 +43,34 @@ public class CostumerBL : ICostumerBL
 
         foreach (var item in p_products)
         {
-            _lineItem.OrderNumber = _orderNumber; 
-            _lineItem.ProductId = item.ProductId;
-            _lineItem.Quantity = item.ProductQuantity;
-            _lineItemsList.Add(_lineItem);
             _orderTotal += (item.ProductPrice*item.ProductQuantity);
+
+            _storeInventoryItem.StoreNumber = p_storeNumber;
+            _storeInventoryItem.ProductId = item.ProductId;
+            _storeInventoryItem.Quantity = item.ProductQuantity;
+
+            _storeInventoryList.Add(_storeInventoryItem);
         }
+
+        _repo.subtractInventory(_storeInventoryList);
 
         _newOrder.OrderNumber = _orderNumber;
         _newOrder.CostumerId = p_costumer.CostumerId;
-        _newOrder.StoreNumber = 000;
+        _newOrder.StoreNumber = p_storeNumber;
         _newOrder.OrderTotal = _orderTotal;
-        _newOrder.OrderedItems = _lineItemsList;
 
-        _repo.addOrder(_lineItemsList, _newOrder);
+        _repo.addOrder(_newOrder);
+        
+
+        foreach (var item in p_products)
+        {
+            _lineItem.OrderNumber = _orderNumber; 
+            _lineItem.ProductId = item.ProductId;
+            _lineItem.Quantity = item.ProductQuantity;
+
+            _repo.addLineItem(_lineItem);
+        }
+        
         
     }
     

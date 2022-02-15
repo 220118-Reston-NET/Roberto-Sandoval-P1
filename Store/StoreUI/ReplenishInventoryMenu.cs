@@ -5,7 +5,7 @@ namespace StoreUI;
 
 class ReplenishInventoryMenu : IMenu
 {
-    List<StoreInventory> _inventoryList = new List<StoreInventory>();
+    private static List<StoreInventory> _inventoryList = new List<StoreInventory>();
     private static StoreFront _newStore =  new StoreFront();
     private static StoreInventory _newItem = new StoreInventory();
 
@@ -28,7 +28,7 @@ class ReplenishInventoryMenu : IMenu
         Console.WriteLine($"                    <3> Store Number: {_newStore.StoreNumber}");
         Console.WriteLine("                    <2> Add Item and Quantity");
         Console.WriteLine("                    <1> Finish Replenish Request");
-        Console.WriteLine("                    <0> Return to Main Menu Without Changing Inventory\n\n");
+        Console.WriteLine("                    <0> Return to Main Menu Without Saving Changes\n\n");
         Console.Write(" Choice: ");
         
     }
@@ -39,20 +39,30 @@ class ReplenishInventoryMenu : IMenu
         switch (choice)
         {
             case "0":
+                _inventoryList = new List<StoreInventory>();
+                _newStore =  new StoreFront();
+                _newItem = new StoreInventory();
                 return "MainMenu";
             case "1":
                 // call method and pass list
                 _storeFrontBL.addInventory(_inventoryList);
-                return "ReplenishInventory";
+                Console.WriteLine("");
+                Console.WriteLine("Inventory has been succesfully updated");
+                Console.WriteLine("Press ENTER to return to Main Menu");
+                Console.ReadLine();
+                return "MainMenu";
             case "2":
+                // Get product information
                 Console.WriteLine("");
                 Console.WriteLine("Enter Item Number");
                 _newItem.ProductId = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Total Store Quantity (Current Quantity + New Inventory Quantity");
+                Console.WriteLine();
+                Console.WriteLine("Enter Total Quantity (Current Quantity + New Inventory Quantity");
                 _newItem.Quantity = Convert.ToInt32(Console.ReadLine());
                 _newItem.StoreNumber = _newStore.StoreNumber;
+                // Add product to inventory list
                 _inventoryList.Add(_newItem);
-                _newItem = new StoreInventory();
+                Console.WriteLine("");
                 Console.WriteLine("Item Added to Inventory Queue");
                 Console.WriteLine("Press ENTER to Continue");
                 Console.ReadLine();
@@ -61,6 +71,7 @@ class ReplenishInventoryMenu : IMenu
                 Console.WriteLine("");
                 Console.WriteLine("Please Enter Store Number");
                 _newStore.StoreNumber = Convert.ToInt32(Console.ReadLine());
+                processInput();
                 return "ReplenishInventory";
             case "4":
                 Console.WriteLine("");
@@ -79,15 +90,25 @@ class ReplenishInventoryMenu : IMenu
 
     public void processInput()
     {
-        if (_newStore.StoreName != ".StoreName" && _newStore.StoreAddress != ".StoreAddress")
+        if (_newStore.StoreNumber != 0)
         {
-            _storeFrontBL.findStore(_newStore);
+            (_newStore, bool found ) = _storeFrontBL.findStore(_newStore);
+            if (!found)
+            {
+                _newStore =  new StoreFront();
+                Console.WriteLine("");
+                Console.WriteLine("Store Not Found in Database");
+                Console.WriteLine("Press ENTER to continue");
+                Console.ReadLine();
+
+            }
         }
         else
         {
+            _newStore =  new StoreFront();
             Console.WriteLine("");
             Console.WriteLine("Please Finish Filling in Store Details");
-            Console.WriteLine("Press ENTER t ocontinue");
+            Console.WriteLine("Press ENTER to continue");
             Console.ReadLine();
         }
     }

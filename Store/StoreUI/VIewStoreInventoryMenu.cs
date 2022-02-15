@@ -6,7 +6,6 @@ namespace StoreUI;
 public class ViewStoreInventoryMenu : IMenu
 {
     private static StoreFront _newStore = new StoreFront();
-    //private bool readyForOrder = false;
     private List<StoreInventory> _listOfInventory = new List<StoreInventory>();
     private bool storeFound = true;
     private bool readyForOrder = false;

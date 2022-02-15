@@ -9,7 +9,9 @@ public class Orders
 
     public Orders()
     {
-        OrderNumber = 000;
+        OrderNumber = 0;
+        CostumerId = 0;
+        StoreNumber = 0;
         OrderTotal = 0.0;
     }
 

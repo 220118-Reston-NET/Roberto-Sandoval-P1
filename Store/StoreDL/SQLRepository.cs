@@ -35,10 +35,10 @@ public class SQLRepository : IRepository
         return p_costumer;
     }
 
-    public void addOrder(List<LineItems> p_lineItemsList, Orders p_order)
+    public void addOrder(Orders p_order)
     {
         string sqlQuery = @"INSERT INTO Orders
-                            VALUES(@orderNumber, @costumerId, @storeNumber";
+                            VALUES(@orderNumber, @costumerId, @storeNumber, @orderTotal)";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -55,6 +55,26 @@ public class SQLRepository : IRepository
 
         }
         
+    }
+
+    public void addLineItem(LineItems p_lineItem)
+    {
+        string sqlQuery = @"INSERT INTO LineItems
+                            VALUES(@orderNumber, @productId, @quantity)";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            conn.Open();
+
+            SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            command.Parameters.AddWithValue("@orderNumber", p_lineItem.OrderNumber);
+            command.Parameters.AddWithValue("@productId", p_lineItem.ProductId);
+            command.Parameters.AddWithValue("@quantity", p_lineItem.Quantity);
+
+            command.ExecuteNonQuery();
+
+        }
     }
 
     public List<Costumer> ListOfCostumers()
@@ -104,8 +124,8 @@ public class SQLRepository : IRepository
                     ProductId = reader.GetInt32(0),
                     ProductName = reader.GetString(1),
                     ProductPrice = reader.GetDouble(2),
-                    ProductDescription = reader.GetString(4),
-                    ProductCategory = reader.GetString(5)
+                    ProductDescription = reader.GetString(3),
+                    ProductCategory = reader.GetString(4)
                 });
             }
         }
@@ -206,19 +226,11 @@ public class SQLRepository : IRepository
             {
                 conn.Open();
 
-                sqlQuery = @"DELETE FROM StoreInventory s WHERE s.storeNumber=@storeNumber AND s.productId=@productId";
+                sqlQuery = @"IF (NOT EXISTS(SELECT * FROM StoreInventory WHERE storeNumber=@storeNumber AND productId=@productId))
+                            BEGIN INSERT INTO StoreInventory VALUES(@storeNumber, @productId, @quantity)
+                            END ELSE BEGIN UPDATE StoreInventory SET quantity = @quantity WHERE storeNumber=@storeNumber AND productId=@productId END";
 
                 SqlCommand command = new SqlCommand(sqlQuery, conn);
-
-                command.Parameters.AddWithValue("@storeNumber", item.StoreNumber);
-                command.Parameters.AddWithValue("@productId", item.ProductId);
-                command.Parameters.AddWithValue("@quantity", item.Quantity);
-
-                command.ExecuteNonQuery();
-
-                sqlQuery = @"INSERT INTO StoreInventory VALUES (@storeNumber, @productId, @quantity)";
-
-                command = new SqlCommand(sqlQuery, conn);
 
                 command.Parameters.AddWithValue("@storeNumber", item.StoreNumber);
                 command.Parameters.AddWithValue("@productId", item.ProductId);
@@ -233,7 +245,7 @@ public class SQLRepository : IRepository
 
     public void subtractInventory(List<StoreInventory> p_products)
     {
-        string sqlQuery = @"UPDATE StoreInventory s SET s.quantity = s.quantity - @quantity WHERE s.storeNumber=@storeNumber AND s.productId=@productId ";
+        string sqlQuery = "";
 
         foreach (var item in p_products)
         {
@@ -241,11 +253,14 @@ public class SQLRepository : IRepository
                 {
                     conn.Open();
 
+                    sqlQuery = @"UPDATE StoreInventory SET quantity = quantity - @quantity WHERE storeNumber=@storeNumber AND productId=@productId";
+
                     SqlCommand command = new SqlCommand(sqlQuery, conn);
 
+                    command.Parameters.AddWithValue("@quantity", item.Quantity);
                     command.Parameters.AddWithValue("@storeNumber", item.StoreNumber);
                     command.Parameters.AddWithValue("@productId", item.ProductId);
-                    command.Parameters.AddWithValue("@quantity", item.Quantity);
+                    
 
                     command.ExecuteNonQuery();
 
@@ -291,7 +306,7 @@ public class SQLRepository : IRepository
 
             while (reader.Read())
             {
-                orderNumber += reader.GetInt32(0)*10;
+                orderNumber += reader.GetInt32(0)*10+10;
             }
         }
 

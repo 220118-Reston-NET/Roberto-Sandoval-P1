@@ -27,6 +27,21 @@ public class StoreFrontBL : IStoreFrontBL
         return (empty, false);
     }
 
+    public (Products, bool) findProduct(Products p_product)
+    {
+        List<Products> _productList = _repo.ListOfProducts();
+
+        foreach (var curr in _productList)
+        {
+            // If costumer exists in database return true and object
+            if (curr.ProductId == p_product.ProductId)
+                return (curr, true);
+        }
+
+        Products empty = new Products();
+        return (empty, false);
+    }
+
     public List<StoreInventory> listInventory(int p_storeNumber)
     {
         List<StoreInventory> inventoryList = _repo.ListInventory(p_storeNumber);

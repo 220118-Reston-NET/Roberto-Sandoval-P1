@@ -5,7 +5,6 @@ namespace StoreUI;
 
 class ViewOrderHistoryMenu : IMenu
 {
-    //private List<Products> _productsForOrder = new List<Products>();
     private static Costumer _newCostumer = new Costumer();
 
     private ICostumerBL _costumerBL;

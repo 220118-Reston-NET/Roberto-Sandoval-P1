@@ -11,6 +11,7 @@ public class Costumer
 
     public Costumer()
     {
+        CostumerId = 0;
         Name = ".Name";
         Phone = ".Phone";
         Address = ".Address";

@@ -8,7 +8,7 @@ public interface ICostumerBL
 
     (Costumer, bool) findCostumer(Costumer p_costumer);
 
-    void placeOrder(Costumer p_costumer, List<Products> p_products);
+    void processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber);
 
     void listOrders(Costumer p_costumer);
 

@@ -397,3 +397,235 @@
 2022-02-13 19:23:58.695 -08:00 [INF] User went itno OrderHistory menu
 2022-02-13 19:24:17.983 -08:00 [INF] User entered main menu
 2022-02-14 07:24:55.222 -08:00 [INF] User exited program
+2022-02-14 08:20:06.076 -08:00 [INF] User exited program
+2022-02-14 08:20:16.983 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:21:09.468 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:23:07.153 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:23:10.714 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:23:13.305 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:23:14.247 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:23:15.402 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:24:31.445 -08:00 [INF] User entered main menu
+2022-02-14 08:24:32.590 -08:00 [INF] User exited program
+2022-02-14 08:24:40.623 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:24:50.770 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:25:47.900 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:26:20.560 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:26:45.296 -08:00 [INF] User entered main menu
+2022-02-14 08:26:50.369 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:34:19.878 -08:00 [INF] User entered main menu
+2022-02-14 08:34:21.958 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:40:49.198 -08:00 [INF] User entered main menu
+2022-02-14 08:40:53.444 -08:00 [INF] User exited program
+2022-02-14 08:56:33.743 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:56:51.886 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:57:37.566 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:57:44.302 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:59:01.543 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:59:05.459 -08:00 [INF] User entered main menu
+2022-02-14 08:59:09.021 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:59:14.611 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 08:59:24.154 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:00:32.122 -08:00 [INF] User entered main menu
+2022-02-14 09:00:33.208 -08:00 [INF] User exited program
+2022-02-14 09:00:47.615 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:01:08.924 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:01:52.809 -08:00 [INF] User entered main menu
+2022-02-14 09:01:55.519 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:01:59.832 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:02:22.295 -08:00 [INF] User entered main menu
+2022-02-14 09:02:24.411 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:02:29.675 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:03:19.636 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:04:12.959 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:04:13.907 -08:00 [INF] User entered main menu
+2022-02-14 09:04:15.984 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:04:27.415 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:05:32.428 -08:00 [INF] User entered main menu
+2022-02-14 09:05:33.087 -08:00 [INF] User exited program
+2022-02-14 09:05:41.373 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:05:50.383 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:06:10.955 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:47:36.905 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:47:39.745 -08:00 [INF] User entered main menu
+2022-02-14 09:47:40.500 -08:00 [INF] User exited program
+2022-02-14 09:47:57.303 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:49:54.107 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:49:55.601 -08:00 [INF] User entered main menu
+2022-02-14 09:49:56.448 -08:00 [INF] User exited program
+2022-02-14 09:50:06.221 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:50:12.422 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:50:33.064 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:52:26.010 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:52:32.680 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:52:46.885 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:54:03.862 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:54:10.156 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:54:22.954 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:56:26.541 -08:00 [INF] User entered main menu
+2022-02-14 09:56:29.524 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:56:42.188 -08:00 [INF] User entered main menu
+2022-02-14 09:57:01.006 -08:00 [INF] User exited program
+2022-02-14 09:57:10.246 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:57:13.683 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:57:34.639 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:57:39.835 -08:00 [INF] User entered main menu
+2022-02-14 09:59:25.700 -08:00 [INF] User exited program
+2022-02-14 09:59:32.958 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:59:36.618 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 09:59:57.014 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 10:02:41.066 -08:00 [INF] User entered main menu
+2022-02-14 10:02:42.399 -08:00 [INF] User exited program
+2022-02-14 10:02:48.478 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 10:02:52.272 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 10:03:03.153 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 14:11:43.552 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 14:11:47.358 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 14:12:03.375 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:01:44.539 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:01:53.608 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:03:19.385 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:04:27.976 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:04:30.927 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:04:38.133 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:05:44.731 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:05:47.850 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:05:54.920 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:06:37.974 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:06:40.995 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:06:48.427 -08:00 [INF] User went into ReplenishINventory menu
+2022-02-14 21:06:52.930 -08:00 [INF] User entered main menu
+2022-02-14 21:09:17.251 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:10:19.994 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:13:42.934 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:15:19.398 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:15:21.641 -08:00 [INF] User entered main menu
+2022-02-14 21:15:22.121 -08:00 [INF] User exited program
+2022-02-14 21:15:33.213 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:15:55.957 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:16:19.952 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:16:35.244 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:17:18.435 -08:00 [INF] User entered main menu
+2022-02-14 21:17:19.144 -08:00 [INF] User exited program
+2022-02-14 21:17:25.124 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:17:30.630 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:17:40.801 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:17:56.079 -08:00 [INF] User entered main menu
+2022-02-14 21:17:56.633 -08:00 [INF] User exited program
+2022-02-14 21:18:02.757 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:18:08.044 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:18:26.770 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:18:51.752 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:19:15.822 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:19:31.571 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:20:47.080 -08:00 [INF] User entered main menu
+2022-02-14 21:20:47.740 -08:00 [INF] User exited program
+2022-02-14 21:20:53.238 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:20:58.366 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:21:27.786 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:22:55.684 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:29:11.707 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:29:16.402 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:29:55.748 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:30:54.333 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:30:59.402 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:31:12.466 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:32:00.614 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:34:26.150 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:34:30.131 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:34:43.117 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:34:49.450 -08:00 [INF] Program reached dafault case in switch (an error occured). Returning user to main menu
+2022-02-14 21:34:55.994 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:35:22.162 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:38:13.021 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:38:16.956 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:38:27.983 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:38:36.352 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:41:56.009 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:41:59.779 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:42:17.026 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:42:30.457 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:45:30.693 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:45:34.983 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:45:40.945 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:45:50.958 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:45:58.275 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:46:12.986 -08:00 [INF] User has placed an order
+2022-02-14 21:46:18.756 -08:00 [INF] User entered main menu
+2022-02-14 21:50:19.400 -08:00 [INF] User exited program
+2022-02-14 21:50:26.799 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:50:33.650 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:50:49.175 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 21:51:00.481 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:04:33.359 -08:00 [INF] User has placed an order
+2022-02-14 22:04:34.165 -08:00 [INF] User entered main menu
+2022-02-14 22:04:36.311 -08:00 [INF] User exited program
+2022-02-14 22:04:51.284 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:04:55.096 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:05:25.535 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:06:23.848 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:06:29.389 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:06:40.899 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:07:05.617 -08:00 [INF] User entered main menu
+2022-02-14 22:07:08.380 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:07:16.638 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:07:26.935 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:10:59.343 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:11:04.651 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:11:14.001 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:13:07.828 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:13:12.369 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:13:23.102 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:13:44.585 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:14:44.084 -08:00 [INF] User has placed an order
+2022-02-14 22:14:58.914 -08:00 [INF] User entered main menu
+2022-02-14 22:18:52.948 -08:00 [INF] User exited program
+2022-02-14 22:18:59.156 -08:00 [INF] User selected AddCostumer menu
+2022-02-14 22:19:01.742 -08:00 [INF] User entered main menu
+2022-02-14 22:19:03.301 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:19:10.375 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:19:20.955 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:20:41.401 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:20:43.120 -08:00 [INF] User entered main menu
+2022-02-14 22:20:43.631 -08:00 [INF] User exited program
+2022-02-14 22:20:50.288 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:20:56.376 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:21:52.813 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:22:13.093 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:22:16.397 -08:00 [INF] User has placed an order
+2022-02-14 22:22:18.349 -08:00 [INF] User entered main menu
+2022-02-14 22:24:58.234 -08:00 [INF] User exited program
+2022-02-14 22:25:03.974 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:25:08.296 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:25:20.067 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:25:26.188 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:26:15.877 -08:00 [INF] User has placed an order
+2022-02-14 22:26:21.901 -08:00 [INF] User entered main menu
+2022-02-14 22:26:23.041 -08:00 [INF] User exited program
+2022-02-14 22:26:53.754 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:26:59.279 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:27:10.980 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:27:17.766 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:27:42.861 -08:00 [INF] User has placed an order
+2022-02-14 22:28:45.386 -08:00 [INF] User entered main menu
+2022-02-14 22:28:49.409 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:29:25.815 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:32:40.389 -08:00 [INF] User entered main menu
+2022-02-14 22:32:43.311 -08:00 [INF] User entered main menu
+2022-02-14 22:32:44.093 -08:00 [INF] User exited program
+2022-02-14 22:32:50.990 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:32:56.092 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:33:18.743 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:33:22.030 -08:00 [INF] User entered main menu
+2022-02-14 22:33:24.655 -08:00 [INF] User went into PlaceOrder menu
+2022-02-14 22:33:45.050 -08:00 [INF] User entered main menu
+2022-02-14 22:33:45.696 -08:00 [INF] User exited program
+2022-02-14 22:40:26.027 -08:00 [INF] User selected AddCostumer menu
+2022-02-14 22:40:31.929 -08:00 [INF] User entered main menu
+2022-02-14 22:40:34.073 -08:00 [INF] User selected SearchCostumer menu
+2022-02-14 22:40:36.389 -08:00 [INF] User entered main menu
+2022-02-14 22:40:43.825 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-14 22:40:47.225 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-14 22:40:58.953 -08:00 [INF] USer selected ViewStoreFront inventory menu
+2022-02-14 22:41:01.549 -08:00 [INF] User entered main menu
+2022-02-14 22:41:06.163 -08:00 [INF] User exited program
