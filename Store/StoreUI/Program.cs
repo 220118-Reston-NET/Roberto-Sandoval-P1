@@ -53,7 +53,7 @@ while(repeat)
             menu = new PlaceOrderMenu(new CostumerBL(new SQLRepository(_connectionString)), new StoreFrontBL(new SQLRepository(_connectionString)));
             break;
         case "ViewStoreInventory":
-            Log.Information("USer selected ViewStoreFront inventory menu");
+            Log.Information("User selected ViewStoreFront inventory menu");
             menu = new ViewStoreInventoryMenu(new StoreFrontBL(new SQLRepository(_connectionString)));
             break;
         case "OrderHistory":

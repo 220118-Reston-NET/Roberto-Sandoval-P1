@@ -81,8 +81,11 @@ public class AddCostumerMenu : IMenu
     {
         if (_newCostumer.Name!=".Name" && _newCostumer.Phone!=".Phone" && _newCostumer.Address!=".Address" && _newCostumer.Email !=".Email")
         {
+            
             _newCostumer.CostumerId = _costumerBL.createCostumerId();
+            Log.Information($"Program created costumerId {_newCostumer.addToOrder}");
             _costumerBL.AddCostumer(_newCostumer);
+            Log.Information($"User succesfully added costumer {_newCostumer.CostumerId} to database");
             Console.WriteLine("");
             Console.WriteLine($"Costumer {_newCostumer.Name} has been succesfully added to database");
             Console.WriteLine("Press ENTER to go back to Main Menu");

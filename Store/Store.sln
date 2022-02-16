@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreUI", "StoreUI\StoreUI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreDL", "StoreDL\StoreDL.csproj", "{65353040-AEDB-4AB8-8F9E-7F69D98BFA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreTest", "StoreTest\StoreTest.csproj", "{0E290B92-01C1-4BB8-9580-96704F598F60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreTest", "StoreTest\StoreTest.csproj", "{5BB8F380-8852-4F01-9E0C-8451500DDD9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +32,9 @@ Global
 		{65353040-AEDB-4AB8-8F9E-7F69D98BFA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65353040-AEDB-4AB8-8F9E-7F69D98BFA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65353040-AEDB-4AB8-8F9E-7F69D98BFA18}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E290B92-01C1-4BB8-9580-96704F598F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E290B92-01C1-4BB8-9580-96704F598F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E290B92-01C1-4BB8-9580-96704F598F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E290B92-01C1-4BB8-9580-96704F598F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB8F380-8852-4F01-9E0C-8451500DDD9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB8F380-8852-4F01-9E0C-8451500DDD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB8F380-8852-4F01-9E0C-8451500DDD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB8F380-8852-4F01-9E0C-8451500DDD9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

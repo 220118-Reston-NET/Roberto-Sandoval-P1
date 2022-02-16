@@ -49,6 +49,13 @@ public class StoreFrontBL : IStoreFrontBL
         return inventoryList;
     }
 
+    public List<Products> listOfProducts()
+    {
+        List<Products> productList = _repo.ListOfProducts();
+
+        return productList;
+    }
+
     public void subtractInventory(List<StoreInventory> p_storeInventory)
     {
         _repo.subtractInventory(p_storeInventory);

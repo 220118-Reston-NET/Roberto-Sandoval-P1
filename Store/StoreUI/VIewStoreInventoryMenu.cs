@@ -59,9 +59,11 @@ public class ViewStoreInventoryMenu : IMenu
             //     }
                 
             case "3":
+                   
                 Console.WriteLine("");
                 Console.WriteLine("Please Enter Store Number");
                 _newStore.StoreNumber = Convert.ToInt32(Console.ReadLine());
+                Log.Information($"User entered store number {_newStore.StoreNumber}"); 
                 return "ViewStoreInventory";
             default:
                 Console.WriteLine("");
@@ -75,12 +77,13 @@ public class ViewStoreInventoryMenu : IMenu
 
     public void processInput()
     {
-        if (_newStore.StoreNumber!=000)
+        if (_newStore.StoreNumber!=0)
         {
             (StoreFront _curr, bool found) = _storeFrontBL.findStore(_newStore);
 
             if(found)
             {
+                Log.Information($"Store Number: {_newStore.StoreNumber} was found in the database");
                 _listOfInventory = _storeFrontBL.listInventory(_curr.StoreNumber);
                 Console.WriteLine("");
                 foreach (var item in _listOfInventory)
@@ -93,6 +96,7 @@ public class ViewStoreInventoryMenu : IMenu
             }
             else
             {
+                Log.Information($"Store Number: {_newStore.StoreNumber} was not found in the database");
                 Console.WriteLine("");
                 Console.WriteLine("Store not found");
                 Console.WriteLine("Information might be incorrect or Store doesn't exist");

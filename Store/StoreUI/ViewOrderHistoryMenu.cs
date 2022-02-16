@@ -61,9 +61,11 @@ class ViewOrderHistoryMenu : IMenu
 
     public void processInput()
     {
+        Log.Information($"User is trying to looked up order history for costumer {_newCostumer.Name}{_newCostumer.Phone}");
         (_newCostumer, bool found) = _costumerBL.findCostumer(_newCostumer);
         if (found)
         {
+            Log.Information($"User succesfully looked up order history for costumer {_newCostumer.CostumerId}");
             List<Orders> orderList = _costumerBL.orderHistory(_newCostumer.CostumerId);
             int i = 1;
 

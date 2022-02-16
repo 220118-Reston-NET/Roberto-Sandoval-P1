@@ -67,9 +67,11 @@ public class SearchCostumerMenu : IMenu
     {
         if (_newCostumer.Name!=".Name" && _newCostumer.Phone!=".Phone")
         {
+            Log.Information($"User is trying to looked up costumer {_newCostumer.Name}{_newCostumer.Phone}");
             (Costumer _curr, bool found) = _costumerBL.findCostumer(_newCostumer);
             if (found)
             {
+                Log.Information($"User succsefully looked up costumer {_newCostumer.CostumerId}");
                 Console.WriteLine("");
                 Console.WriteLine("Costumer was successfully found in the Database");
                 Console.WriteLine(_curr.ToString());

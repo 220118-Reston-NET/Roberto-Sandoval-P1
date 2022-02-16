@@ -91,8 +91,7 @@ public class PlaceOrderMenu : IMenu
                     readyToProcess = true;
                 if (readyToProcess){
                     _costumerBL.processOrder(_listOfProducts, _newCostumer, _newStoreFront.StoreNumber);
-                    Log.Information("User has placed an order");
-
+                    Log.Information($"User placed order for costumer {_newCostumer.CostumerId} from store {_newStoreFront.StoreNumber}");
                     Console.WriteLine("");
                     Console.WriteLine("Your Order Has Been Succesfully Placed");
                     Console.WriteLine("Press ENTER To Go Back To Main Menu");
@@ -135,12 +134,13 @@ public class PlaceOrderMenu : IMenu
             case "3":
                 if (addedCostumer && addedStore)
                 {
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Please Enter Item Number");
                     _currProduct.ProductId = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Please Enter Quantity");
                     int _quantity = Convert.ToInt32(Console.ReadLine());
-
+                    
                     (_currProduct, bool found) = _storeFrontBL.findProduct(_currProduct);
                     if (found)
                     {
@@ -152,6 +152,7 @@ public class PlaceOrderMenu : IMenu
                         _listOfProducts.Add(_currProduct);
                         _listOfStock.Add(_currStock);
                         
+                        Log.Information($"User succesfully added product {_currProduct.ProductId} with quantity {_currProduct.ProductQuantity} to order");
                         Console.WriteLine("");
                         Console.WriteLine($"Item Number: {_currProduct.ProductId} With Quantity {_currProduct.ProductQuantity}: Has Been Succesfully Added To Your Order");
 
@@ -221,6 +222,7 @@ public class PlaceOrderMenu : IMenu
 
         if (storeFound)
         {
+            Log.Information($"User succesfully added store {_newStoreFront.StoreNumber} to order");
             addedStore = true;
             Console.WriteLine("");
             Console.WriteLine("Store Has Been Added To Order");
@@ -229,6 +231,7 @@ public class PlaceOrderMenu : IMenu
         }
         else
         {
+            Log.Information($"User added store {_newStoreFront.StoreNumber} to order but store doesn't exist");
             Console.WriteLine("Incorrect Store Number\nPress ENTER to go back and Try Again");
             Console.ReadLine();
         }

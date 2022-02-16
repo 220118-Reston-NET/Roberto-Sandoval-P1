@@ -73,14 +73,6 @@ public class CostumerBL : ICostumerBL
         
         
     }
-    
-    public void listOrders(Costumer p_costumer)
-    {
-        foreach(var curr in p_costumer._orders)
-        {
-            Console.WriteLine(curr.ToString);
-        }
-    }
 
     public List<Orders> orderHistory(int p_costumerId)
     {

@@ -629,3 +629,24 @@
 2022-02-14 22:40:58.953 -08:00 [INF] USer selected ViewStoreFront inventory menu
 2022-02-14 22:41:01.549 -08:00 [INF] User entered main menu
 2022-02-14 22:41:06.163 -08:00 [INF] User exited program
+2022-02-15 13:47:58.169 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:48:16.545 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:48:26.354 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:48:49.550 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:48:58.750 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:49:01.008 -08:00 [INF] Program created costumerId System.Action`1[StoreModel.Orders]
+2022-02-15 13:49:01.116 -08:00 [INF] User succesfully added costumer 1020 to database
+2022-02-15 13:49:04.227 -08:00 [INF] User addded costumer System.Func`1[System.String]
+2022-02-15 13:49:04.233 -08:00 [INF] User entered main menu
+2022-02-15 13:49:14.578 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:49:19.417 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:49:27.060 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:50:00.681 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:50:11.906 -08:00 [INF] User selected AddCostumer menu
+2022-02-15 13:50:14.512 -08:00 [INF] Program created costumerId System.Action`1[StoreModel.Orders]
+2022-02-15 13:50:14.560 -08:00 [INF] User succesfully added costumer 1030 to database
+2022-02-15 13:50:15.249 -08:00 [INF] User addded costumer System.Func`1[System.String]
+2022-02-15 13:50:15.250 -08:00 [INF] User entered main menu
+2022-02-15 14:18:36.144 -08:00 [INF] User exited program
+2022-02-15 20:47:59.898 -08:00 [INF] User exited program
+2022-02-15 23:13:34.655 -08:00 [INF] User exited program

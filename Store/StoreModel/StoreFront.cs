@@ -8,7 +8,7 @@ public class StoreFront
 
     public StoreFront()
     {
-        StoreNumber = 000;
+        StoreNumber = 0;
         StoreName = ".StoreName";
         StoreAddress = ".StoreAddress";
 
