@@ -11,9 +11,9 @@ public class CostumerBL : ICostumerBL
         _repo = p_repo;
     }
 
-    public void AddCostumer(Costumer p_costumer)
+    public Costumer AddCostumer(Costumer p_costumer)
     {
-        _repo.AddCostumer(p_costumer);
+        return _repo.AddCostumer(p_costumer);
     }
 
     public (Costumer, bool) findCostumer(Costumer p_costumer)

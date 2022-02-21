@@ -5,10 +5,11 @@ namespace StoreBL;
 public interface ICostumerBL
 {
     /// <summary>
-    /// This function processes the request to addd a costumer to the datbase
+    /// This function processes the request to add a costumer to the database
     /// </summary>
     /// <param name="p_costumer"></param>
-    void AddCostumer(Costumer p_costumer);
+    /// <returns></returns>
+    Costumer AddCostumer(Costumer p_costumer);
 
     /// <summary>
     /// This function processes the request to find a costumer in the database
