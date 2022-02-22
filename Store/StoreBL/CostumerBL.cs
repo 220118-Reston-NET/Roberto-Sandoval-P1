@@ -16,19 +16,29 @@ public class CostumerBL : ICostumerBL
         return _repo.AddCostumer(p_costumer);
     }
 
-    public (Costumer, bool) findCostumer(Costumer p_costumer)
+    public List<Costumer> GetAllCostumers()
     {
-        List<Costumer> _costumerList = _repo.ListOfCostumers();
+        return _repo.ListOfCostumers();
+    }
 
-        foreach (var curr in _costumerList)
-        {
-            // If costumer exists in database return true and object
-            if (curr.Name == p_costumer.Name && curr.Phone == p_costumer.Phone)
-                return (curr, true);
-        }
+    public List<Costumer> FindCostumer(int p_costumerId)
+    {
+        List<Costumer> costumerList = _repo.ListOfCostumers();
 
-        Costumer empty = new Costumer();
-        return (empty, false);
+        return costumerList
+                        .Where(Costumer => Costumer.CostumerId.Equals(p_costumerId)) //Where method is designed to filter a collection based on a condition
+                        .ToList();
+
+
+        // foreach (var curr in costumerList)
+        // {
+        //     // If costumer exists in database return true and object
+        //     if (curr.CostumerId == p_costumerId)
+        //         return curr;
+        // }
+
+        // Costumer empty = new Costumer();
+        // return empty;
     }
 
     public void processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber)

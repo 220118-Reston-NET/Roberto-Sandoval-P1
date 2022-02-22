@@ -4,7 +4,7 @@ using StoreDL;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+//builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IRepository>(repo => new SQLRepository(builder.Configuration.GetConnectionString("StoreDatabase")));
 builder.Services.AddScoped<ICostumerBL, CostumerBL>();
+builder.Services.AddScoped<IStoreFrontBL, StoreFrontBL>();
 
 var app = builder.Build();
 

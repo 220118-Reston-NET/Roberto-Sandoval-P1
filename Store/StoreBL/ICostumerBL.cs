@@ -12,11 +12,18 @@ public interface ICostumerBL
     Costumer AddCostumer(Costumer p_costumer);
 
     /// <summary>
+    /// This method gets all costumers in the database
+    /// </summary>
+    /// <returns></returns>
+
+    List<Costumer> GetAllCostumers();
+
+    /// <summary>
     /// This function processes the request to find a costumer in the database
     /// </summary>
-    /// <param name="p_costumer"></param>
+    /// <param name="p_costumerId"></param>
     /// <returns></returns>
-    (Costumer, bool) findCostumer(Costumer p_costumer);
+    List<Costumer> FindCostumer(int p_costumerId);
 
     /// <summary>
     /// This function processes a new order
