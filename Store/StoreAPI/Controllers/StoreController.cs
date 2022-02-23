@@ -18,48 +18,98 @@ private IStoreFrontBL _storeFrontBL;
         _costumerBL = p_costumerBL;
     }
 
-    [HttpPost("Add")]
-    public IActionResult AddPokemon([FromBody] Costumer p_costumer)
+    [HttpPost("AddCostumer")]
+    public IActionResult AddCostumer([FromBody] Costumer p_costumer)
     {
         try
         {
             return Created("Successfully added", _costumerBL.AddCostumer(p_costumer));
         }
-        catch (System.Exception ex)
+        catch (System.Exception err)
         {
-            return Conflict(ex.Message);
+            return Conflict(err.Message);
+        }
+    }
+
+    [HttpGet("FindCostumerById")]
+    public IActionResult GetCostumerById(int costumerId)
+    {
+        try
+        {
+            return Ok(_costumerBL.FindCostumer(costumerId));
+        }
+        catch (System.Exception)
+        {
+            return NotFound();
         }
     }
 
     [HttpGet("GetAllCostumers")]
-        public IActionResult GetAllPokemon()
-        {
-            try
-            {
-                
-                
-                return Ok(_costumerBL.GetAllCostumers);
-            }
-            catch (SqlException)
-            {
-                //The API is responsible for sending the right resource and the right status code
-                //In this case, if it was unable to connect to the database, it will give a 404 status code
-                return NotFound();
-            }
+    public IActionResult GetAllPokemon()
+    {
+        try
+        {   
+            return Ok(_costumerBL.GetAllCostumers());
         }
+        catch (SqlException)
+        {
+            return NotFound();
+        }
+    }
 
-    [HttpGet("{costumerId}")]
-        public IActionResult GetCostumerById(int costumerId)
+    [HttpGet("GetCostumerOrderHistory")]
+    public IActionResult GetOrderCostumerHistory(int costumerId)
+    {
+        try
         {
-            try
-            {
-                return Ok(_costumerBL.FindCostumer(costumerId));
-            }
-            catch (System.Exception)
-            {
-                return NotFound();
-            }
+            return Ok(_costumerBL.orderHistory(costumerId));
         }
+        catch (System.Exception)
+        {
+            return NotFound();
+        }
+    }
+
+    [HttpGet("GetLocationInventory")]
+    public IActionResult GetLocationInventory(int storeNumber)
+    {
+        try
+        {
+            return Ok(_storeFrontBL.listInventory(storeNumber));
+        }
+        catch (System.Exception)
+        {
+            return NotFound();
+        }
+    }
+
+    [HttpPost("ReplenishInventory")]
+    public IActionResult ReplenishInventory([FromBody] List<StoreInventory> inventoryList)
+    {
+        try
+        {
+            return Created("Successfully added", _storeFrontBL.addInventory(inventoryList));
+        }
+        catch (System.Exception err)
+        {
+            return Conflict(err.Message);
+        }
+    }
+
+    [HttpPost("PlaceOrder")]
+    public IActionResult PlaceOrder([FromBody] List<Products> orderProducts, [FromRoute] Costumer orderCostumer, [FromRoute] int orderStoreNumber)
+    {
+        try
+        {
+            return Created("Successfully processed order for costumer: ", _costumerBL.processOrder(orderProducts, orderCostumer, orderStoreNumber));
+        }
+        catch (System.Exception err)
+        {
+            return Conflict(err.Message);
+        }
+    }
+
+
     
     // // GET: api/Store
     // [HttpGet("GetAll")]

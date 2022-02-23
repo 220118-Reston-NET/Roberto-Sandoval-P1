@@ -41,7 +41,7 @@ public class CostumerBL : ICostumerBL
         // return empty;
     }
 
-    public void processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber)
+    public Costumer processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber)
     {
         List<StoreInventory> _storeInventoryList = new List<StoreInventory>();
 
@@ -81,7 +81,7 @@ public class CostumerBL : ICostumerBL
             _repo.addLineItem(_lineItem);
         }
         
-        
+        return p_costumer;
     }
 
     public List<Orders> orderHistory(int p_costumerId)

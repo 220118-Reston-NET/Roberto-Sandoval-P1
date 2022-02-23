@@ -62,9 +62,9 @@ public class StoreFrontBL : IStoreFrontBL
 
     }
 
-    public void addInventory(List<StoreInventory> p_storeInventory)
+    public List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory)
     {
-        _repo.addInventory(p_storeInventory);
+        return _repo.addInventory(p_storeInventory);
 
     }
 

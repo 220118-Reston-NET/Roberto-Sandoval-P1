@@ -163,13 +163,16 @@ public class SQLRepository : IRepository
     {
         List<Orders> orderList = new List<Orders>();
 
-        string sqlQuery = @"SELECT * FROM Orders o WHERE o.costumerId="+p_costumerId;
+        string sqlQuery = @"SELECT * FROM Orders o WHERE o.costumerId=@costumerId";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
             conn.Open();
             
             SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            command.Parameters.AddWithValue("@costumerId", p_costumerId);
+
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
@@ -191,13 +194,16 @@ public class SQLRepository : IRepository
         List<StoreInventory> inventoryList = new List<StoreInventory>();
 
         string sqlQuery = @"SELECT s.storeNumber, p.productId, p.productName, p.productDescription, s.quantity
-             FROM Products p INNER JOIN StoreInventory s ON p.productId=s.productId" ;
+             FROM Products p INNER JOIN StoreInventory s ON p.productId=s.productId WHERE s.storeNumber=@orderNumber";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
             conn.Open();
             
             SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            command.Parameters.AddWithValue("@orderNumber", p_storeNumber);
+
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
@@ -216,8 +222,11 @@ public class SQLRepository : IRepository
 
     }
 
-    public void addInventory(List<StoreInventory> p_stock)
+    public List<StoreInventory> addInventory(List<StoreInventory> p_stock)
     {
+        List<StoreInventory> addedInventoryList = new List<StoreInventory>();
+        StoreInventory currItem = new StoreInventory();
+
         string sqlQuery = "";
         
         foreach (var item in p_stock)
@@ -238,9 +247,19 @@ public class SQLRepository : IRepository
 
                 command.ExecuteNonQuery();
 
+                currItem.StoreNumber = item.StoreNumber;
+                currItem.ProductId = item.ProductId;
+                currItem.Quantity = item.Quantity;
+                currItem.ProductName = item.ProductName;
+                currItem.ProductDescription = item.ProductDescription;
+
+                addedInventoryList.Add(currItem);
+
             }
         }
-        
+
+        return addedInventoryList;
+
     }
 
     public void subtractInventory(List<StoreInventory> p_products)

@@ -41,8 +41,9 @@ public interface IStoreFrontBL
     /// <summary>
     /// This function processes the request to add inventory to the database for a certain store
     /// </summary>
-    /// <param name="p_stock"></param>
-    void addInventory(List<StoreInventory> p_stock);
+    /// <param name="p_storeInventory"></param>
+    /// <returns></returns>
+    List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory);
     
 
 }

@@ -70,7 +70,8 @@ public interface IRepository
     /// This function adds inventory quantity in the datbase for a certain store
     /// </summary>
     /// <param name="p_stock"></param>
-    void addInventory(List<StoreInventory> p_stock);
+    /// <returns></returns>
+    List<StoreInventory> addInventory(List<StoreInventory> p_stock);
 
     /// <summary>
     /// This function creates a costumerId. It does so by 

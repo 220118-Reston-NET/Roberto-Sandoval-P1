@@ -31,7 +31,8 @@ public interface ICostumerBL
     /// <param name="p_products"></param>
     /// <param name="p_costumer"></param>
     /// <param name="p_storeNumber"></param>
-    void processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber);
+    /// <returns></returns>
+    Costumer processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber);
 
     /// <summary>
     /// This function processes the request to see all orders placed for a costumer
