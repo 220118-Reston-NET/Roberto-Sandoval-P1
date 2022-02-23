@@ -62,9 +62,17 @@ public class StoreFrontBL : IStoreFrontBL
 
     }
 
-    public List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory)
+    public List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory, int p_managerId, int p_managerPassword)
     {
-        return _repo.addInventory(p_storeInventory);
+        List<Manager> managerList = _repo.GetManagerList();
+
+        foreach (var item in managerList)
+        {
+            if (item.ManagerId == p_managerId && item.ManagerPassword == p_managerPassword)
+                return _repo.addInventory(p_storeInventory);
+        }
+
+        throw new Exception("Manager doesn't exist in database");
 
     }
 

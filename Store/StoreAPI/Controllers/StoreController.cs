@@ -84,11 +84,11 @@ private IStoreFrontBL _storeFrontBL;
     }
 
     [HttpPost("ReplenishInventory")]
-    public IActionResult ReplenishInventory([FromBody] List<StoreInventory> inventoryList)
+    public IActionResult ReplenishInventory([FromBody] List<StoreInventory> inventoryList, [FromRoute] int managerId, [FromRoute] int ManagerPassword)
     {
         try
         {
-            return Created("Successfully added", _storeFrontBL.addInventory(inventoryList));
+            return Created("Successfully added", _storeFrontBL.addInventory(inventoryList, managerId, ManagerPassword));
         }
         catch (System.Exception err)
         {

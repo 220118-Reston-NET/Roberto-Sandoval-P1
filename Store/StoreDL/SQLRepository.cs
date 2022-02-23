@@ -332,4 +332,31 @@ public class SQLRepository : IRepository
 
         return orderNumber;
     }
+
+    public List<Manager> GetManagerList()
+    {
+        List<Manager> managerList = new List<Manager>();
+
+        string sqlQuery = @"SELECT * FROM Manager";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            conn.Open();
+            
+            SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                managerList.Add(new Manager(){
+                    ManagerId = reader.GetInt32(0),
+                    ManagerPassword = reader.GetInt32(1),
+                });
+            }
+        }
+
+        return managerList;
+
+    }
 }

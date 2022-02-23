@@ -87,4 +87,10 @@ public interface IRepository
     /// <returns></returns>
     int createOrderId();
 
+    /// <summary>
+    /// This function gets a list of all Managers and their credentials
+    /// </summary>
+    /// <returns></returns>
+    List<Manager> GetManagerList();
+
 }

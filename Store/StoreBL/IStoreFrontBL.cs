@@ -39,11 +39,14 @@ public interface IStoreFrontBL
     void subtractInventory(List<StoreInventory> p_stock);
 
     /// <summary>
-    /// This function processes the request to add inventory to the database for a certain store
+    /// This function processes the request to add inventory to the database for a certain store.
+    /// The process has to be done by a manger and a manager's id and passcode is required.
     /// </summary>
     /// <param name="p_storeInventory"></param>
+    /// <param name="p_managerId"></param>
+    /// <param name="p_managerCode"></param>
     /// <returns></returns>
-    List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory);
+    List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory, int p_managerId, int p_managerPassword);
     
 
 }
