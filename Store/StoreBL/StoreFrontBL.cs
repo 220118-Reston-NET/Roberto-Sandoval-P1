@@ -76,4 +76,37 @@ public class StoreFrontBL : IStoreFrontBL
 
     }
 
+    public List<Orders> orderHistory(int p_storeNumber)
+    {
+        List<Orders> orderList = _repo.ListOfStoreFrontOrders(p_storeNumber);
+
+        return orderList;
+    }
+
+    public bool VerifyEmployee(int p_employeeId, int p_employeePassword)
+    {
+        List<Employee> employeeList = _repo.GetEmployeeList();
+
+        foreach (var item in employeeList)
+        {
+            if (item.EmployeeId == p_employeeId && item.EmployeePassword == p_employeePassword)
+                return true;
+        }
+
+        throw new Exception("Can't verify employee credentials");
+        
+    }
+
+    public bool VerifyManager(int p_managerId, int p_managerPassword)
+    {
+        List<Manager> managerList = _repo.GetManagerList();
+
+        foreach (var item in managerList)
+        {
+            if (item.ManagerId == p_managerId && item.ManagerPassword == p_managerPassword)
+                return true;
+        }
+
+        throw new Exception("Can't verify manager credentials");
+    }
 }

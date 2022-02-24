@@ -159,7 +159,7 @@ public class SQLRepository : IRepository
         return storeList;
     }
 
-    public List<Orders> ListOfOrders(int p_costumerId)
+    public List<Orders> ListOfCostumerOrders(int p_costumerId)
     {
         List<Orders> orderList = new List<Orders>();
 
@@ -172,6 +172,36 @@ public class SQLRepository : IRepository
             SqlCommand command = new SqlCommand(sqlQuery, conn);
 
             command.Parameters.AddWithValue("@costumerId", p_costumerId);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                orderList.Add(new Orders(){
+                    OrderNumber = reader.GetInt32(0),
+                    CostumerId = reader.GetInt32(1),
+                    StoreNumber = reader.GetInt32(2),
+                    OrderTotal = reader.GetDouble(3)
+                });
+            }
+        }
+
+        return orderList;
+    }
+
+    public List<Orders> ListOfStoreFrontOrders(int p_storeNumber)
+    {
+        List<Orders> orderList = new List<Orders>();
+
+        string sqlQuery = @"SELECT * FROM Orders WHERE storeNumber=@storeNumber";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            conn.Open();
+            
+            SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            command.Parameters.AddWithValue("@storeNumber", p_storeNumber);
 
             SqlDataReader reader = command.ExecuteReader();
 
@@ -357,6 +387,33 @@ public class SQLRepository : IRepository
         }
 
         return managerList;
+
+    }
+
+    public List<Employee> GetEmployeeList()
+    {
+        List<Employee> employeeList = new List<Employee>();
+
+        string sqlQuery = @"SELECT * FROM Employee";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            conn.Open();
+            
+            SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                employeeList.Add(new Employee(){
+                    EmployeeId = reader.GetInt32(0),
+                    EmployeePassword = reader.GetInt32(1),
+                });
+            }
+        }
+
+        return employeeList;
 
     }
 }

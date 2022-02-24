@@ -79,6 +79,21 @@ private IStoreFrontBL _storeFrontBL;
         }
     }
 
+    [HttpGet("GetStoreFrontOrderHistory")]
+    public IActionResult GetStoreFrontCostumerHistory(int storeNumber)
+    {
+        try
+        {
+            Log.Information($"User successfully got order history for store{storeNumber}");
+            return Ok(_storeFrontBL.orderHistory(storeNumber));
+        }
+        catch (System.Exception error)
+        {
+            Log.Information($"Get order history for store {storeNumber} exited with exception {error.Message}");
+            return Conflict(error.Message);
+        }
+    }
+
     [HttpGet("GetLocationInventory")]
     public IActionResult GetLocationInventory(int storeNumber)
     {
@@ -120,6 +135,20 @@ private IStoreFrontBL _storeFrontBL;
         catch (System.Exception error)
         {
             Log.Information($"Order for costumer {orderCostumer.CostumerId} exited with exception {error.Message}");
+            return Conflict(error.Message);
+        }
+    }
+
+    [HttpPost("VerifyEmployee")]
+    public IActionResult PlaceOrder([FromRoute] int employeeId, [FromRoute] int employeePassword)
+    {
+        try
+        {
+            return Ok(_storeFrontBL.VerifyEmployee(employeeId, employeePassword));
+        }
+        catch (System.Exception error)
+        {
+            
             return Conflict(error.Message);
         }
     }

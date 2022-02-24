@@ -50,7 +50,7 @@ public class OrderTest
     }
 
     [Fact]
-    public void OrderList()
+    public void CostumerOrderList()
     {
         //Arrange
         int orderNumber = 300010;
@@ -73,12 +73,47 @@ public class OrderTest
 
         Mock<IRepository> mockRepo = new Mock<IRepository>();
 
-        mockRepo.Setup(repo => repo.ListOfOrders(1010)).Returns(expectedList);
+        mockRepo.Setup(repo => repo.ListOfCostumerOrders(1010)).Returns(expectedList);
 
         ICostumerBL costumerBL = new CostumerBL(mockRepo.Object);
 
         //Act
         List<Orders> actualList = costumerBL.orderHistory(1010);
+
+        //Assert
+        Assert.Equal(expectedList, actualList);
+    }
+
+    [Fact]
+    public void StoreFrontOrderList()
+    {
+        //Arrange
+        int orderNumber = 300050;
+        int costumerId = 1040;
+        int storeNumber = 165;
+        double orderTotal = 11.98;
+
+        Orders newOrder = new Orders()
+        {
+            OrderNumber = orderNumber,
+            CostumerId = costumerId,
+            StoreNumber = storeNumber,
+            OrderTotal = orderTotal,
+
+
+        };
+
+        List<Orders> expectedList = new List<Orders>();
+        expectedList.Add(newOrder);
+
+        Mock<IRepository> mockRepo = new Mock<IRepository>();
+
+        mockRepo.Setup(repo => repo.ListOfStoreFrontOrders(1010)).Returns(expectedList);
+
+        IStoreFrontBL storeFrontBL = new StoreFrontBL(mockRepo.Object);
+
+        //Act
+        List<Orders> actualList = storeFrontBL.orderHistory(1010);
 
         //Assert
         Assert.Equal(expectedList, actualList);

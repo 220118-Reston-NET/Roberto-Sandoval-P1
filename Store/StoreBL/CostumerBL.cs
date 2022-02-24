@@ -86,7 +86,7 @@ public class CostumerBL : ICostumerBL
 
     public List<Orders> orderHistory(int p_costumerId)
     {
-        List<Orders> orderList = _repo.ListOfOrders(p_costumerId);
+        List<Orders> orderList = _repo.ListOfCostumerOrders(p_costumerId);
 
         return orderList;
     }

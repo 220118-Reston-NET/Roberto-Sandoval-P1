@@ -32,12 +32,20 @@ public interface IRepository
     List<StoreFront> ListOfStores();
 
     /// <summary>
-    /// This functions reads all orders in the database
+    /// This functions reads all orders in the database for a specific costumer
     /// and returns them in a list
     /// </summary>
     /// <param name="p_costumerId"></param>
     /// <returns></returns>
-    List<Orders> ListOfOrders(int p_costumerId);
+    List<Orders> ListOfCostumerOrders(int p_costumerId);
+
+    /// <summary>
+    /// This functions reads all orders in the database for a specific store
+    /// and returns them in a list
+    /// </summary>
+    /// <param name="p_storeNumber"></param>
+    /// <returns></returns>
+    List<Orders> ListOfStoreFrontOrders(int p_storeNumber);
 
     /// <summary>
     /// This function lists all the inventory for a store
@@ -92,5 +100,11 @@ public interface IRepository
     /// </summary>
     /// <returns></returns>
     List<Manager> GetManagerList();
+
+    /// <summary>
+    /// This function returns a list of all employees (non-manager)
+    /// </summary>
+    /// <returns></returns>
+    List<Employee> GetEmployeeList();
 
 }

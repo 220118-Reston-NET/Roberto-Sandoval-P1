@@ -47,6 +47,27 @@ public interface IStoreFrontBL
     /// <param name="p_managerCode"></param>
     /// <returns></returns>
     List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory, int p_managerId, int p_managerPassword);
-    
+    /// <summary>
+    /// This function processes the request to get all orders for a specified store
+    /// </summary>
+    /// <param name="p_storeNumber"></param>
+    /// <returns></returns>
+    List<Orders> orderHistory(int p_storeNumber);
+
+    /// <summary>
+    /// This functions processes the request to get all employee credentials to check if employee is authorized
+    /// </summary>
+    /// <param name="p_employeeId"></param>
+    /// <param name="p_employeePassword"></param>
+    /// <returns></returns>
+    bool VerifyEmployee(int p_employeeId, int p_employeePassword);
+
+    /// <summary>
+    /// This function processes the request to get all manager credentials to check if manager is authorized
+    /// </summary>
+    /// <param name="p_managerId"></param>
+    /// <param name="p_managerPassword"></param>
+    /// <returns></returns>
+    bool VerifyManager(int p_managerId, int p_managerPassword);
 
 }
