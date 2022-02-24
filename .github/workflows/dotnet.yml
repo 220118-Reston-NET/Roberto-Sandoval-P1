@@ -1,0 +1,42 @@
+name: Build, Test, and Deploy API
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Store
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --no-restore
+      
+    - name: Test
+      run: dotnet test --no-build
+      
+    - name: Create Publish Folder
+      run: dotnet publish -c Release -o publish
+      
+    - name: Deploy
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: StoreWebApp
+        slot-name: 'Production'
+        publish-profile: $${{secrets.AZURE_WEBAPP}}
+        package: Store/publish
