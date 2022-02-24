@@ -40,3 +40,4 @@ jobs:
         slot-name: 'Production'
         publish-profile: $${{secrets.AZURE_WEBAPP}}
         package: Store/publish
+        
