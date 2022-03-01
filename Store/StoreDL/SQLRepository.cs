@@ -162,6 +162,7 @@ public class SQLRepository : IRepository
     public List<Orders> ListOfCostumerOrders(int p_costumerId)
     {
         List<Orders> orderList = new List<Orders>();
+        
 
         string sqlQuery = @"SELECT * FROM Orders o WHERE o.costumerId=@costumerId";
 
@@ -181,12 +182,46 @@ public class SQLRepository : IRepository
                     OrderNumber = reader.GetInt32(0),
                     CostumerId = reader.GetInt32(1),
                     StoreNumber = reader.GetInt32(2),
-                    OrderTotal = reader.GetDouble(3)
+                    OrderTotal = reader.GetDouble(3),
+                    DateCreated = reader.GetDateTime(4)
+                    
+                });
+
+                orderList.Last().OrderedItems = ListOfOrderProducts(orderList.Last().OrderNumber);
+            }
+        }
+
+
+        return orderList;
+    }
+
+    public List<LineItems> ListOfOrderProducts(int p_orderNumber)
+    {
+        List<LineItems> orderProductsList = new List<LineItems>();
+
+        string sqlQuery = @"SELECT * FROM LineItems l WHERE l.orderNumber=@orderNumber";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            conn.Open();
+            
+            SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            command.Parameters.AddWithValue("@orderNumber", p_orderNumber);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                orderProductsList.Add(new LineItems(){
+                    OrderNumber = reader.GetInt32(0),
+                    ProductId = reader.GetInt32(1),
+                    Quantity = reader.GetInt32(2),
                 });
             }
         }
 
-        return orderList;
+        return orderProductsList;
     }
 
     public List<Orders> ListOfStoreFrontOrders(int p_storeNumber)
@@ -211,7 +246,8 @@ public class SQLRepository : IRepository
                     OrderNumber = reader.GetInt32(0),
                     CostumerId = reader.GetInt32(1),
                     StoreNumber = reader.GetInt32(2),
-                    OrderTotal = reader.GetDouble(3)
+                    OrderTotal = reader.GetDouble(3),
+                    DateCreated = reader.GetDateTime(4)
                 });
             }
         }

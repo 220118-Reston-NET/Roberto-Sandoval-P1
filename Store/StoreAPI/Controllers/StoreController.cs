@@ -65,12 +65,12 @@ private IStoreFrontBL _storeFrontBL;
     }
 
     [HttpGet("GetCostumerOrderHistory")]
-    public IActionResult GetOrderCostumerHistory(int costumerId)
+    public IActionResult GetCostumerOrderHistory(int costumerId, string orderBy)
     {
         try
         {
             Log.Information($"User successfully got order history for costumer {costumerId}");
-            return Ok(_costumerBL.orderHistory(costumerId));
+            return Ok(_costumerBL.orderHistory(costumerId, orderBy));
         }
         catch (System.Exception error)
         {
@@ -80,12 +80,12 @@ private IStoreFrontBL _storeFrontBL;
     }
 
     [HttpGet("GetStoreFrontOrderHistory")]
-    public IActionResult GetStoreFrontCostumerHistory(int storeNumber)
+    public IActionResult GetStoreFrontCostumerHistory(int storeNumber, [FromRoute] string orderBy)
     {
         try
         {
             Log.Information($"User successfully got order history for store{storeNumber}");
-            return Ok(_storeFrontBL.orderHistory(storeNumber));
+            return Ok(_storeFrontBL.orderHistory(storeNumber, orderBy));
         }
         catch (System.Exception error)
         {

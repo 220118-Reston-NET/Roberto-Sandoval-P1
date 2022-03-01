@@ -68,6 +68,7 @@ public class CostumerBL : ICostumerBL
         _newOrder.CostumerId = p_costumer.CostumerId;
         _newOrder.StoreNumber = p_storeNumber;
         _newOrder.OrderTotal = _orderTotal;
+        _newOrder.DateCreated = DateTime.Now;
 
         _repo.addOrder(_newOrder);
         
@@ -84,11 +85,22 @@ public class CostumerBL : ICostumerBL
         return p_costumer;
     }
 
-    public List<Orders> orderHistory(int p_costumerId)
+    public List<Orders> orderHistory(int p_costumerId, string p_orderBy)
     {
         List<Orders> orderList = _repo.ListOfCostumerOrders(p_costumerId);
+        List<Orders> sortedList = new List<Orders>();
+        
+        if (p_orderBy == "Date")
+        {
+            sortedList = orderList.OrderBy(x=>x.DateCreated).ToList();
+        }
+        else if(p_orderBy == "Total")
+        {
+            sortedList = orderList.OrderBy(x=>x.OrderTotal).ToList();
+        }
 
-        return orderList;
+    
+        return sortedList;
     }
 
     public int createCostumerId()

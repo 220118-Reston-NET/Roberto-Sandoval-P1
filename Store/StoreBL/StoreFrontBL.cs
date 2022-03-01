@@ -76,11 +76,22 @@ public class StoreFrontBL : IStoreFrontBL
 
     }
 
-    public List<Orders> orderHistory(int p_storeNumber)
+    public List<Orders> orderHistory(int p_storeNumber, string p_orderBy)
     {
         List<Orders> orderList = _repo.ListOfStoreFrontOrders(p_storeNumber);
+        List<Orders> sortedList = new List<Orders>();
+        
+        if (p_orderBy == "Date")
+        {
+            sortedList = orderList.OrderBy(x=>x.DateCreated).ToList();
+        }
+        else if(p_orderBy == "Total")
+        {
+            sortedList = orderList.OrderBy(x=>x.OrderTotal).ToList();
+        }
 
-        return orderList;
+    
+        return sortedList;
     }
 
     public bool VerifyEmployee(int p_employeeId, int p_employeePassword)

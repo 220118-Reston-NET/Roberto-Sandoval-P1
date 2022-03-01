@@ -38,6 +38,12 @@ public interface IRepository
     /// <param name="p_costumerId"></param>
     /// <returns></returns>
     List<Orders> ListOfCostumerOrders(int p_costumerId);
+    /// <summary>
+    /// Gets all items that belong to an order
+    /// </summary>
+    /// <param name="p_orderNumber"></param>
+    /// <returns></returns>
+    List<LineItems> ListOfOrderProducts(int p_orderNumber);
 
     /// <summary>
     /// This functions reads all orders in the database for a specific store

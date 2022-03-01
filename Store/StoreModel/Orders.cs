@@ -5,6 +5,7 @@ public class Orders
     public int CostumerId { get; set; }
     public int StoreNumber { get; set; }
     public double OrderTotal { get; set; }
+    public DateTime DateCreated { get; set; }
     public List<LineItems> OrderedItems { get; set; }
 
     public Orders()

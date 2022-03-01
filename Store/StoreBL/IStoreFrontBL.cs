@@ -47,12 +47,15 @@ public interface IStoreFrontBL
     /// <param name="p_managerCode"></param>
     /// <returns></returns>
     List<StoreInventory> addInventory(List<StoreInventory> p_storeInventory, int p_managerId, int p_managerPassword);
+
     /// <summary>
-    /// This function processes the request to get all orders for a specified store
+    /// This function processes the request to list all orders placed at a certain store
+    /// THe list of orders is sorted by either data or total
     /// </summary>
-    /// <param name="p_storeNumber"></param>
+    /// <param name="p_costumerId"></param>
+    /// <param name="p_orderBy"></param>
     /// <returns></returns>
-    List<Orders> orderHistory(int p_storeNumber);
+    List<Orders> orderHistory(int p_costumerId, string p_orderBy);
 
     /// <summary>
     /// This functions processes the request to get all employee credentials to check if employee is authorized

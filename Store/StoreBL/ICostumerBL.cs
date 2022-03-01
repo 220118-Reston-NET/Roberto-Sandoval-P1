@@ -36,10 +36,17 @@ public interface ICostumerBL
 
     /// <summary>
     /// This function processes the request to see all orders placed for a costumer
+    /// The list of orders is sorted by either date or total
     /// </summary>
     /// <param name="p_costumerId"></param>
+    /// <param name="p_orderBy"></param>
     /// <returns></returns>
-    List<Orders> orderHistory(int p_costumerId);
+    List<Orders> orderHistory(int p_costumerId, string p_orderBy);
+    
+    /// <summary>
+    /// This function creates the costumer ID based on previous IDs already in the database
+    /// </summary>
+    /// <returns></returns>
     int createCostumerId();
 
 }
