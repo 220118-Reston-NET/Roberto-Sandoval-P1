@@ -98,6 +98,10 @@ public class CostumerBL : ICostumerBL
         {
             sortedList = orderList.OrderBy(x=>x.OrderTotal).ToList();
         }
+        else if (p_orderBy == "None")
+        {
+            return orderList;
+        }
 
     
         return sortedList;
