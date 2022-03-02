@@ -14,10 +14,10 @@ public class StoreFront
 
     }
 
-    public override string ToString()
-    {
-        return $"Name: {StoreName}\nAddress: {StoreAddress}";
-    }
+    // public override string ToString()
+    // {
+    //     return $"Name: {StoreName}\nAddress: {StoreAddress}";
+    // }
     
 
 }

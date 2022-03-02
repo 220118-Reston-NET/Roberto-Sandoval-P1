@@ -118,4 +118,19 @@ public class OrderTest
         //Assert
         Assert.Equal(expectedList, actualList);
     }
+
+    [Fact]
+    public void TestDataOther()
+    {
+        //Arrange
+        Orders newOrder = new Orders();
+        System.DateTime currDateTime = new System.DateTime();
+
+        //Act
+        newOrder.DateCreated = currDateTime;
+
+        //Assert
+        Assert.NotNull(newOrder.DateCreated);
+        Assert.Equal(currDateTime, newOrder.DateCreated);
+    }
 }

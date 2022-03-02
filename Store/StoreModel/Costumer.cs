@@ -25,9 +25,9 @@ public class Costumer
         _orders.Add(p_product);
     }
 
-    public override string ToString()
-    {
-        return $"ID: {CostumerId}\nName: {Name}\nPhone Number: {Phone}\nAddress: {Address}\nEmail: {Email}";
-    }
+    // public override string ToString()
+    // {
+    //     return $"ID: {CostumerId}\nName: {Name}\nPhone Number: {Phone}\nAddress: {Address}\nEmail: {Email}";
+    // }
     
 }

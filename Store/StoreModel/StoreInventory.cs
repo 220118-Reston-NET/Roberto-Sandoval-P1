@@ -17,9 +17,9 @@ public class StoreInventory
         Quantity = 0;
     }
 
-    public override string ToString()
-    {
-        return $"ID: {ProductId} Name: {ProductName} Description: {ProductDescription} Quantity Available: {Quantity}";
-    }
+    // public override string ToString()
+    // {
+    //     return $"ID: {ProductId} Name: {ProductName} Description: {ProductDescription} Quantity Available: {Quantity}";
+    // }
     
 }

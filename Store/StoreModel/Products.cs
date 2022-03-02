@@ -18,9 +18,9 @@ public class Products
         ProductCategory = "ProductCategory";
     }
 
-    public override string ToString()
-    {
-        return $"Name: {ProductName}\nPrice: {ProductPrice}\nDescription: {ProductDescription}\nCategory: {ProductCategory}\nQuantity Available: {ProductQuantity}";
-    }
+    // public override string ToString()
+    // {
+    //     return $"Name: {ProductName}\nPrice: {ProductPrice}\nDescription: {ProductDescription}\nCategory: {ProductCategory}\nQuantity Available: {ProductQuantity}";
+    // }
 
 }
