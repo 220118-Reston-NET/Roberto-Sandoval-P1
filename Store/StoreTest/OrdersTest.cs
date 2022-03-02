@@ -78,7 +78,7 @@ public class OrderTest
         ICostumerBL costumerBL = new CostumerBL(mockRepo.Object);
 
         //Act
-        List<Orders> actualList = costumerBL.orderHistory(1010, "None");
+        List<Orders> actualList = costumerBL.OrderHistory(1010, "None");
 
         //Assert
         Assert.Equal(expectedList, actualList);

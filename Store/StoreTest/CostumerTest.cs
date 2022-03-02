@@ -66,7 +66,6 @@ public class CostumerTest
         string costumerPhone = "415-555-5555";
         string costumerAddress = "555 River St. San Francisco CA";
         string costumerEmail = "nancy@email.com";
-        bool found = false;
 
         Costumer expectedCostumer = new Costumer()
         {
@@ -92,5 +91,46 @@ public class CostumerTest
 
         //Assert
         Assert.Equal(expectedCostumerList, actualCostumerList);
+    }
+
+    [Fact]
+    public void TestCreateCostumerId()
+    {
+        //Arrange
+        int expectedCostumerId = 1000;
+    
+
+        Mock<IRepository> mockRepo = new Mock<IRepository>();
+
+        mockRepo.Setup(repo => repo.createCostumerId()).Returns(expectedCostumerId);
+
+        ICostumerBL costumerBL = new CostumerBL(mockRepo.Object);
+
+        //Act
+        int actualCostumerId = costumerBL.CreateCostumerId();
+
+
+        //Assert
+        Assert.Equal(expectedCostumerId, actualCostumerId);
+    }
+
+    public void TestCreateOrderId()
+    {
+        //Arrange
+        int expectedOrderId = 300010;
+    
+
+        Mock<IRepository> mockRepo = new Mock<IRepository>();
+
+        mockRepo.Setup(repo => repo.createOrderId()).Returns(expectedOrderId);
+
+        ICostumerBL costumerBL = new CostumerBL(mockRepo.Object);
+
+        //Act
+        int actualOrderId = costumerBL.CreateOrderId();
+
+
+        //Assert
+        Assert.Equal(expectedOrderId, actualOrderId);
     }
 }

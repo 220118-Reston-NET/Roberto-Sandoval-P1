@@ -19,10 +19,6 @@ public class Costumer
         _orders = new List<Orders>();
     }
 
-    public void printOrders()
-    {
-        _orders.ToString();
-    }
 
     public void addToOrder(Orders p_product)
     {

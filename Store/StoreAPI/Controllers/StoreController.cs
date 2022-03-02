@@ -70,7 +70,7 @@ private IStoreFrontBL _storeFrontBL;
         try
         {
             Log.Information($"User successfully got order history for costumer {costumerId}");
-            return Ok(_costumerBL.orderHistory(costumerId, orderBy));
+            return Ok(_costumerBL.OrderHistory(costumerId, orderBy));
         }
         catch (System.Exception error)
         {
@@ -110,7 +110,7 @@ private IStoreFrontBL _storeFrontBL;
     }
 
     [HttpPost("ReplenishInventory")]
-    public IActionResult ReplenishInventory([FromBody] List<StoreInventory> inventoryList, [FromRoute] int managerId, [FromRoute] int ManagerPassword)
+    public IActionResult ReplenishInventory([FromBody] List<StoreInventory> inventoryList, int managerId, int ManagerPassword)
     {
         try
         {
@@ -125,22 +125,22 @@ private IStoreFrontBL _storeFrontBL;
     }
 
     [HttpPost("PlaceOrder")]
-    public IActionResult PlaceOrder([FromBody] List<Products> orderProducts, [FromRoute] Costumer orderCostumer, [FromRoute] int orderStoreNumber)
+    public IActionResult PlaceOrder([FromBody] List<Products> orderProducts, int costumerId, int storeNumber)
     {
         try
         {
-            Log.Information($"Order for costumer {orderCostumer.CostumerId} placed successfully from store {orderStoreNumber}");
-            return Created("Successfully processed order for costumer: ", _costumerBL.processOrder(orderProducts, orderCostumer, orderStoreNumber));
+            Log.Information($"Order for costumer {costumerId} placed successfully from store {storeNumber}");
+            return Created("Successfully processed order for costumer: ", _costumerBL.ProcessOrder(orderProducts, costumerId, storeNumber));
         }
         catch (System.Exception error)
         {
-            Log.Information($"Order for costumer {orderCostumer.CostumerId} exited with exception {error.Message}");
+            Log.Information($"Order for costumer {costumerId} exited with exception {error.Message}");
             return Conflict(error.Message);
         }
     }
 
     [HttpPost("VerifyEmployee")]
-    public IActionResult PlaceOrder([FromRoute] int employeeId, [FromRoute] int employeePassword)
+    public IActionResult PlaceOrder(int employeeId, int employeePassword)
     {
         try
         {
@@ -152,39 +152,5 @@ private IStoreFrontBL _storeFrontBL;
             return Conflict(error.Message);
         }
     }
-
-
-    
-    // // GET: api/Store
-    // [HttpGet("GetAll")]
-    // public IEnumerable<string> Get()
-    // {
-    //     return new string[] { "value1", "value2" };
-    // }
-
-    // // GET: api/Store/5
-    // [HttpGet("{id}", Name = "Get")]
-    // public string Get(int id)
-    // {
-    //     return "value";
-    // }
-
-    // // POST: api/Store
-    // [HttpPost]
-    // public void Post([FromBody] string value)
-    // {
-    // }
-
-    // // PUT: api/Store/5
-    // [HttpPut("{id}")]
-    // public void Put(int id, [FromBody] string value)
-    // {
-    // }
-
-    // // DELETE: api/Store/5
-    // [HttpDelete("{id}")]
-    // public void Delete(int id)
-    // {
-    // }
 }
 

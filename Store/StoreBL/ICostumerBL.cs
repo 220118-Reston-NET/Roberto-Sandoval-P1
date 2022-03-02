@@ -29,10 +29,10 @@ public interface ICostumerBL
     /// This function processes a new order
     /// </summary>
     /// <param name="p_products"></param>
-    /// <param name="p_costumer"></param>
+    /// <param name="p_costumerId"></param>
     /// <param name="p_storeNumber"></param>
     /// <returns></returns>
-    Costumer processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber);
+    int ProcessOrder(List<Products> p_products, int p_costumerId, int p_storeNumber);
 
     /// <summary>
     /// This function processes the request to see all orders placed for a costumer
@@ -41,12 +41,19 @@ public interface ICostumerBL
     /// <param name="p_costumerId"></param>
     /// <param name="p_orderBy"></param>
     /// <returns></returns>
-    List<Orders> orderHistory(int p_costumerId, string p_orderBy);
+    List<Orders> OrderHistory(int p_costumerId, string p_orderBy);
     
     /// <summary>
     /// This function creates the costumer ID based on previous IDs already in the database
     /// </summary>
     /// <returns></returns>
-    int createCostumerId();
+    int CreateCostumerId();
+
+    /// <summary>
+    /// This function creates an order ID based on previous orders in the database
+    /// </summary>
+    /// <returns></returns>
+
+    int CreateOrderId();
 
 }

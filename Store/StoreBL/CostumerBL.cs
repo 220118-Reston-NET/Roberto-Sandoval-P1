@@ -41,7 +41,7 @@ public class CostumerBL : ICostumerBL
         // return empty;
     }
 
-    public Costumer processOrder(List<Products> p_products, Costumer p_costumer, int p_storeNumber)
+    public int ProcessOrder(List<Products> p_products, int p_costumerId, int p_storeNumber)
     {
         List<StoreInventory> _storeInventoryList = new List<StoreInventory>();
 
@@ -49,7 +49,7 @@ public class CostumerBL : ICostumerBL
         LineItems _lineItem = new LineItems();
         Orders _newOrder = new Orders();
         double _orderTotal = 0.0;
-        int _orderNumber = createOrderId();
+        int _orderNumber = CreateOrderId();
 
         foreach (var item in p_products)
         {
@@ -65,7 +65,7 @@ public class CostumerBL : ICostumerBL
         _repo.subtractInventory(_storeInventoryList);
 
         _newOrder.OrderNumber = _orderNumber;
-        _newOrder.CostumerId = p_costumer.CostumerId;
+        _newOrder.CostumerId = p_costumerId;
         _newOrder.StoreNumber = p_storeNumber;
         _newOrder.OrderTotal = _orderTotal;
         _newOrder.DateCreated = DateTime.Now;
@@ -82,10 +82,10 @@ public class CostumerBL : ICostumerBL
             _repo.addLineItem(_lineItem);
         }
         
-        return p_costumer;
+        return p_costumerId;
     }
 
-    public List<Orders> orderHistory(int p_costumerId, string p_orderBy)
+    public List<Orders> OrderHistory(int p_costumerId, string p_orderBy)
     {
         List<Orders> orderList = _repo.ListOfCostumerOrders(p_costumerId);
         List<Orders> sortedList = new List<Orders>();
@@ -107,12 +107,12 @@ public class CostumerBL : ICostumerBL
         return sortedList;
     }
 
-    public int createCostumerId()
+    public int CreateCostumerId()
     {
         return _repo.createCostumerId();
     }
 
-    public int createOrderId()
+    public int CreateOrderId()
     {
         return _repo.createOrderId();
     }
