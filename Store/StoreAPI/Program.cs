@@ -1,5 +1,13 @@
+global using Serilog;
+
 using StoreBL;
 using StoreDL;
+
+
+// Initializing program logging for debugging
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File("./logs/debuglog.txt") //We configure our logger to save in this file
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 

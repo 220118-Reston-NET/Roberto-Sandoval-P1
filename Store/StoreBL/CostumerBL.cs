@@ -13,6 +13,7 @@ public class CostumerBL : ICostumerBL
 
     public Costumer AddCostumer(Costumer p_costumer)
     {
+        p_costumer.CostumerId = CreateCostumerId();
         return _repo.AddCostumer(p_costumer);
     }
 
