@@ -51,4 +51,62 @@ public class StoreEmployeeTest
 
     }
 
+    [Fact]
+    public void TestVerifyEmployee()
+    {
+        //Arrange
+        List<Employee> expectedEmployeeList = new List<Employee>();
+
+        Employee currEmployee = new Employee()
+        {
+            EmployeeId = 123456,
+            EmployeePassword = 654321
+        };
+
+        expectedEmployeeList.Add(currEmployee);
+    
+
+        Mock<IRepository> mockRepo = new Mock<IRepository>();
+
+        mockRepo.Setup(repo => repo.GetEmployeeList()).Returns(expectedEmployeeList);
+
+        IStoreFrontBL storeFrontBL = new StoreFrontBL(mockRepo.Object);
+
+        //Act
+        bool found = storeFrontBL.VerifyEmployee(currEmployee.EmployeeId, currEmployee.EmployeePassword);
+
+
+        //Assert
+        Assert.True(found);
+    }
+
+    [Fact]
+    public void TestVerifyManager()
+    {
+        //Arrange
+        List<Employee> expectedManagerList = new List<Employee>();
+
+        Employee currEmployee = new Employee()
+        {
+            EmployeeId = 142536,
+            EmployeePassword = 123456
+        };
+
+        expectedManagerList.Add(currEmployee);
+    
+
+        Mock<IRepository> mockRepo = new Mock<IRepository>();
+
+        mockRepo.Setup(repo => repo.GetEmployeeList()).Returns(expectedManagerList);
+
+        IStoreFrontBL storeFrontBL = new StoreFrontBL(mockRepo.Object);
+
+        //Act
+        bool found = storeFrontBL.VerifyEmployee(currEmployee.EmployeeId, currEmployee.EmployeePassword);
+
+
+        //Assert
+        Assert.True(found);
+    }
+
 }
