@@ -195,9 +195,9 @@ public class SQLRepository : IRepository
         return orderList;
     }
 
-    public List<LineItems> ListOfOrderProducts(int p_orderNumber)
+    public List<OrderProduct> ListOfOrderProducts(int p_orderNumber)
     {
-        List<LineItems> orderProductsList = new List<LineItems>();
+        List<OrderProduct> orderProductsList = new List<OrderProduct>();
 
         string sqlQuery = @"SELECT * FROM LineItems l WHERE l.orderNumber=@orderNumber";
 
@@ -213,15 +213,53 @@ public class SQLRepository : IRepository
 
             while (reader.Read())
             {
-                orderProductsList.Add(new LineItems(){
-                    OrderNumber = reader.GetInt32(0),
+                orderProductsList.Add(new OrderProduct(){
+                    //OrderNumber = reader.GetInt32(0),
                     ProductId = reader.GetInt32(1),
-                    Quantity = reader.GetInt32(2),
+                    ProductQuantity = reader.GetInt32(2),
                 });
+
+                Products currProduct = FindProduct(orderProductsList.Last().ProductId);
+
+                orderProductsList.Last().ProductCost = currProduct.ProductPrice;
+                orderProductsList.Last().ProductDescription = currProduct.ProductDescription;
+                orderProductsList.Last().ProductName = currProduct.ProductName;
+                orderProductsList.Last().TotalCost = orderProductsList.Last().ProductQuantity*currProduct.ProductPrice;
             }
         }
 
         return orderProductsList;
+    }
+
+    public Products FindProduct(int p_productId)
+    {
+        Products currProdcut = new Products();
+
+        string sqlQuery = @"SELECT * FROM Products p WHERE p.productId=@productId";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        {
+            conn.Open();
+            
+            SqlCommand command = new SqlCommand(sqlQuery, conn);
+
+            command.Parameters.AddWithValue("@productId", p_productId);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                currProdcut = new Products(){
+                    ProductId = reader.GetInt32(0),
+                    ProductName = reader.GetString(1),
+                    ProductPrice = reader.GetDouble(2),
+                    ProductDescription = reader.GetString(3),
+                    ProductCategory = reader.GetString(4)
+                };
+            }
+        }
+
+        return currProdcut;
     }
 
     public List<Orders> ListOfStoreFrontOrders(int p_storeNumber)
@@ -250,6 +288,8 @@ public class SQLRepository : IRepository
                     DateCreated = reader.GetDateTime(4)
                 });
             }
+
+            orderList.Last().OrderedItems = ListOfOrderProducts(orderList.Last().OrderNumber);
         }
 
         return orderList;

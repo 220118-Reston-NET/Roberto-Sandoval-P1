@@ -80,7 +80,7 @@ private IStoreFrontBL _storeFrontBL;
     }
 
     [HttpGet("GetStoreFrontOrderHistory")]
-    public IActionResult GetStoreFrontCostumerHistory(int storeNumber, [FromRoute] string orderBy)
+    public IActionResult GetStoreFrontCostumerHistory(int storeNumber, string orderBy)
     {
         try
         {
