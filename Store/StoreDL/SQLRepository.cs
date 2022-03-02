@@ -38,7 +38,7 @@ public class SQLRepository : IRepository
     public void addOrder(Orders p_order)
     {
         string sqlQuery = @"INSERT INTO Orders
-                            VALUES(@orderNumber, @costumerId, @storeNumber, @orderTotal)";
+                            VALUES(@orderNumber, @costumerId, @storeNumber, @orderTotal, @dateStamp)";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         {
@@ -50,6 +50,7 @@ public class SQLRepository : IRepository
             command.Parameters.AddWithValue("@costumerId", p_order.CostumerId);
             command.Parameters.AddWithValue("@storeNumber", p_order.StoreNumber);
             command.Parameters.AddWithValue("@orderTotal", p_order.OrderTotal);
+            command.Parameters.AddWithValue("@dateStamp", p_order.DateCreated);
 
             command.ExecuteNonQuery();
 
