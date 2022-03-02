@@ -287,9 +287,11 @@ public class SQLRepository : IRepository
                     OrderTotal = reader.GetDouble(3),
                     DateCreated = reader.GetDateTime(4)
                 });
+
+                orderList.Last().OrderedItems = ListOfOrderProducts(orderList.Last().OrderNumber);
             }
 
-            orderList.Last().OrderedItems = ListOfOrderProducts(orderList.Last().OrderNumber);
+            
         }
 
         return orderList;
