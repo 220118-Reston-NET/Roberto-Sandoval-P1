@@ -108,12 +108,12 @@ public class OrderTest
 
         Mock<IRepository> mockRepo = new Mock<IRepository>();
 
-        mockRepo.Setup(repo => repo.ListOfStoreFrontOrders(1010)).Returns(expectedList);
+        mockRepo.Setup(repo => repo.ListOfStoreFrontOrders(165)).Returns(expectedList);
 
         IStoreFrontBL storeFrontBL = new StoreFrontBL(mockRepo.Object);
 
         //Act
-        List<Orders> actualList = storeFrontBL.orderHistory(1010, " None");
+        List<Orders> actualList = storeFrontBL.orderHistory(165, " None");
 
         //Assert
         Assert.Equal(expectedList, actualList);
