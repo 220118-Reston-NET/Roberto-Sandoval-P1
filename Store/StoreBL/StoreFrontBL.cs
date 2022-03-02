@@ -101,10 +101,17 @@ public class StoreFrontBL : IStoreFrontBL
     public bool VerifyEmployee(int p_employeeId, int p_employeePassword)
     {
         List<Employee> employeeList = _repo.GetEmployeeList();
+        List<Manager> managersList = _repo.GetManagerList();
 
         foreach (var item in employeeList)
         {
             if (item.EmployeeId == p_employeeId && item.EmployeePassword == p_employeePassword)
+                return true;
+        }
+
+        foreach (var item in managersList)
+        {
+            if (item.ManagerId == p_employeeId && item.ManagerPassword == p_employeePassword)
                 return true;
         }
 

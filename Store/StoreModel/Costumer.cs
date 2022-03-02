@@ -19,11 +19,10 @@ public class Costumer
         _orders = new List<Orders>();
     }
 
-
-    public void addToOrder(Orders p_product)
-    {
-        _orders.Add(p_product);
-    }
+    // public void addToOrder(Orders p_product)
+    // {
+    //     _orders.Add(p_product);
+    // }
 
     // public override string ToString()
     // {
