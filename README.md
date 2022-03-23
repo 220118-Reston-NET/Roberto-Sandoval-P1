@@ -14,5 +14,5 @@ for either a store in the system or a costumer.
 - RESTfulAPI
 - Back end Costumer, Product, and Store models
 - C# using Visual Studio Code
-- ## Links
+## Links
 - Online hosted project: https://storewebapp.azurewebsites.net/
